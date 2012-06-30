@@ -1,0 +1,7 @@
+# When using a tiling window manager, vim will have dead area at it's borders,
+# where it can't fit an entire line/column. The default color of this dead area
+# is usually an ugly grey. Setting it to black looks much better.
+style "dark-vim" {
+  bg[NORMAL] = "#000000"
+}
+widget "vim-main-window.*GtkForm" style "dark-vim"

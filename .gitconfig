@@ -1,3 +1,10 @@
 [user]
 	name = Edward O'Callaghan
 	email = victoredwardocallaghan@gmail.com
+[core]
+	  excludesfile = ~/.gitignore
+[alias]
+	        lol = log --graph --decorate --pretty=oneline --abbrev-commit
+			        lola = log --graph --decorate --pretty=oneline --abbrev-commit --all
+[color]
+	  ui = true

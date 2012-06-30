@@ -1,0 +1,54 @@
+[submodule "vim/bundle/fugitive"]
+	path = vim/bundle/fugitive
+	url = git://github.com/tpope/vim-fugitive.git
+[submodule "vim/bundle/tagbar"]
+	path = vim/bundle/tagbar
+	url = git://github.com/majutsushi/tagbar.git
+[submodule "vim/bundle/ack"]
+	path = vim/bundle/ack
+	url = git://github.com/mileszs/ack.vim.git
+[submodule "vim/bundle/unimpaired"]
+	path = vim/bundle/unimpaired
+	url = git://github.com/tpope/vim-unimpaired.git
+[submodule "vim/bundle/bad-whitespace"]
+	path = vim/bundle/bad-whitespace
+	url = git://github.com/bitc/vim-bad-whitespace.git
+[submodule "vim/bundle/actionscript"]
+	path = vim/bundle/actionscript
+	url = git://github.com/vim-scripts/actionscript.vim--Jethani.git
+[submodule "vim/bundle/nerdtree"]
+	path = vim/bundle/nerdtree
+	url = git://github.com/scrooloose/nerdtree.git
+[submodule "vim/bundle/moria"]
+	path = vim/bundle/moria
+	url = git://github.com/levicook/vim-moria.git
+[submodule "vim/bundle/tabular"]
+	path = vim/bundle/tabular
+	url = git://github.com/godlygeek/tabular.git
+[submodule "vim/bundle/puppet"]
+	path = vim/bundle/puppet
+	url = git://github.com/rodjek/vim-puppet.git
+[submodule "vim/bundle/command-t"]
+	path = vim/bundle/command-t
+	url = git://github.com/wincent/Command-T.git
+[submodule "vim/bundle/markdown"]
+	path = vim/bundle/markdown
+	url = git://github.com/tpope/vim-markdown.git
+[submodule "vim/bundle/syntastic"]
+	path = vim/bundle/syntastic
+	url = git://github.com/scrooloose/syntastic.git
+[submodule "vim/bundle/ghcmod"]
+	path = vim/bundle/ghcmod
+	url = git://github.com/eagletmt/ghcmod-vim.git
+[submodule "vim/bundle/vimproc"]
+	path = vim/bundle/vimproc
+	url = git://github.com/Shougo/vimproc.git
+[submodule "vim/bundle/coffee-script"]
+	path = vim/bundle/coffee-script
+	url = git://github.com/kchmck/vim-coffee-script.git
+[submodule "vim/bundle/less"]
+	path = vim/bundle/less
+	url = git://github.com/groenewege/vim-less.git
+[submodule "vim/bundle/handlebars"]
+	path = vim/bundle/handlebars
+	url = git://github.com/nono/vim-handlebars.git

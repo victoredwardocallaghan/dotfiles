@@ -1,0 +1,156 @@
+
+xvt*termName:	rxvt
+
+!-[Cursor Settings]-----
+Xcursor.theme: Vanilla-DMZ
+
+!-[Font Rendering]-----
+Xft.dpi:        96
+Xft.antialias:  true
+Xft.rgba:       rgb
+Xft.hinting:    true
+!Xft*hinting:	full
+Xft.hintstyle:  hintslight
+Xft.lcdfilter:  lcdslight
+
+!-[URxvt Settings]-----
+URxvt*termName: rxvt-unicode-256color
+URxvt*.dpi:	96
+URxvt*.depth: 32
+URxvt*tabbed.tabbar-fg:	10
+URxvt*tabbed.tabbar-bg:	#000000
+URxvt*tabbed.tab-fg:	4
+URxvt*tabbed.tab-bg:	#000000
+URxvt*tint:	#000000
+!URxvt*foreground:	grey
+!URxvt*background:	#242424
+urxvt*foreground:	#7f8f9f
+urxvt*background:	#0c0d0e
+URxvt*saveLines:	1000
+URxvt.font:	xft:DejaVu Sans Mono:antialias=true:pixelsize=13
+URxvt*cursorBlink:	true
+URxvt*transparent:	true
+URxvt*allow_bold:	true
+!URxvt*shading:	20
+URxvt*scrollBar:	false
+URxvt*colorUL:	#7FB0F1
+URxvt*.underlineColor:   yellow
+
+URxvt.perl-ext-common:	default,matcher
+URxvt.urlLauncher:	/usr/bin/dwb
+URxvt.matcher.button:   1
+URxvt.perl-ext:      default,url-select
+URxvt.keysym.M-u:    perl:url-select:select_next
+URxvt.url-select.launcher:   /usr/bin/dwb -x O 
+URxvt.url-select.underline: true
+
+!-[colors]----
+URxvt*cursorColor:	#A7BF76
+URxvt*.colorIT:      #87af5f
+URxvt*.colorBD:      #d7d7d7
+URxvt*.colorUL:      #87afd7
+
+!-[XScreensaver Settings]-----
+xscreensaver.Dialog.Button.foreground:	#0c0d0e
+xscreensaver.Dialog.Button.background:	#7f8f9f
+xscreensaver.Dialog.text.foreground:	#0c0d0e
+xscreensaver.Dialog.text.background:	#7f8f9f
+xscreensaver.Dialog.shadowThickness:	2
+xscreensaver.Dialog.foreground:	#7f8f9f
+xscreensaver.Dialog.topShadowColor:	#0c0d0e
+xscreensaver.Dialog.borderWidth:	20
+xscreensaver.Dialog.bottomShadowColor:	#0c0d0e
+xscreensaver.Dialog.labelFont:	-*-dina-medium-r-*-*-12-*-*-*-*-*-*-*
+xscreensaver.Dialog.background:	#0c0d0e
+xscreensaver.Dialog.internalBorderWidth:	24
+xscreensaver.Dialog.buttonFont:	-*-dina-bold-r-*-*-12-*-*-*-*-*-*-*
+xscreensaver.Dialog.bodyFont:	-*-dina-medium-r-*-*-12-*-*-*-*-*-*-*
+xscreensaver.Dialog.dateFont:	-*-dina-medium-r-*-*-12-*-*-*-*-*-*-*
+xscreensaver.Dialog.headingFont:	-*-dina-bold-r-*-*-12-*-*-*-*-*-*-*
+xscreensaver.Dialog.unameFont:	-*-dina-medium-r-*-*-12-*-*-*-*-*-*-*
+xscreensaver.passwd.thermometer.foreground:	#7f8f9f
+xscreensaver.passwd.thermometer.background:	#0c0d0e
+xscreensaver.passwd.thermometer.width:	10
+xscreensaver.passwd.passwdFont:	-*-dina-bold-r-*-*-12-*-*-*-*-*-*-*
+xscreensaver.dateFormat:	%I:%M%P %a %b %d, %Y
+
+!-[Xrenoise Settings]-----
+xrenoise.use_xcursors:	1
+xrenoise.display:	:0.0
+xrenoise.display_resource:	0x00,0x01,0xE9,0x25,0x36,0x41,0xC3,0x5E
+xrenoise.executable_path:	/usr/local/bin/renoise-2.8.1
+
+
+!-[terminal colors]----
+!Theme Fifteen
+*background: rgb:1d/2b/3a
+*foreground: rgb:be/be/be
+*color0:     rgb:00/00/00
+*color1:     rgb:d3/62/65
+*color2:     rgb:ae/ce/91
+*color3:     rgb:e7/e1/8c
+*color4:     rgb:7a/7a/b0
+*color5:     rgb:96/3c/59
+*color6:     rgb:41/81/79
+*color7:     rgb:be/be/be
+*color8:     rgb:66/66/66
+*color9:     rgb:ef/81/71
+*color10:    rgb:e5/f7/79
+*color11:    rgb:ff/f7/99
+*color12:    rgb:41/86/be
+*color13:    rgb:ef/9e/be
+*color14:    rgb:71/be/be
+*color15:    rgb:ff/ff/ff
+
+! WORKING -
+!black
+!*color0: #222222
+!*color8: #666666
+!red
+!*color1: #E84F4F
+!*color9: #D23D3D
+!green
+!*color2: #B7CE42
+!*color10: #BDE077
+!yellow
+!*color3: #FEA63C
+!*color11: #FFE863
+!blue
+!*color4: #AACCBB
+!!*color12: #66A9B9
+!*color12: #66AABB
+!magenta
+!*color5: #B7416E
+!*color13: #E16A98
+!cyan
+!*color6: #6D878D
+!*color14: #42717B
+!white
+!*color7: #DDDDDD
+!*color15: #CCCCCC
+
+! NEW -
+!black
+!*color0: #1a1a1a
+!*color8: #404040
+!red
+!*color1: #d75f5f
+!*color9: #EA8484
+!green
+!*color2: #87af5f
+!*color10: #C7F09F
+!yellow
+!*color3: #ffaf5f
+!*color11: #FFCC9A
+!blue
+!*color4: #87afd7
+!*color12: #a5caef
+!magenta
+!*color5: #8787af
+!*color13: #A6A6DE
+!cyan
+!*color6: #5f8787
+!*color14: #69b2b2
+!white
+!*color7: #808080
+!*color15: #d7d7d7

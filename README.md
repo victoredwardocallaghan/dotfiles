@@ -8,18 +8,21 @@ Requirements;
  * ctags
  * cabal install ghc-mod lushtags
 
- * firefox
+ * rtorrent
+ * mutt - email client
+ * abook - address book for mutt
  * dwb - web browser
- * xmobar
- * xmonad
- * urxvt
- * trayer
+ * lynx - terminal web browser
+ * xmobar - status bar
+ * xmonad - window manager
+ * urxvt - terminal emulator
+ * trayer - ensures space for status bar
  * ls++
  * colordiff
  * pacman-color
  * htop
  * tree
- * tmux
+ * tmux - terminal multiplexer
  * xscreensaver
  * xset
  * xbindkeys

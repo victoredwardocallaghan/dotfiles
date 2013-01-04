@@ -17,10 +17,6 @@ Xft.lcdfilter:  lcdslight
 URxvt*termName: rxvt-unicode-256color
 URxvt*.dpi:	96
 URxvt*.depth: 32
-URxvt*tabbed.tabbar-fg:	10
-URxvt*tabbed.tabbar-bg:	#000000
-URxvt*tabbed.tab-fg:	4
-URxvt*tabbed.tab-bg:	#000000
 URxvt*tint:	#000000
 !URxvt*foreground:	grey
 !URxvt*background:	#242424
@@ -36,13 +32,52 @@ URxvt*scrollBar:	false
 URxvt*colorUL:	#7FB0F1
 URxvt*.underlineColor:   yellow
 
-URxvt.perl-ext-common:	default,matcher
+!!-[URxvt per-line display filtering]--
+URxvt.perl-ext:      default,matcher
+!,digital-clock
+!,selection-pastebin
 URxvt.urlLauncher:	/usr/bin/dwb
+URxvt.keysym.C-Delete:	perl:matcher
 URxvt.matcher.button:   1
-URxvt.perl-ext:      default,url-select
-URxvt.keysym.M-u:    perl:url-select:select_next
+URxvt.matcher.pattern.1:  \\bwww\\.[\\w-]+\\.[\\w./?&@#-]*[\\w/-]
+URxvt.matcher.pattern.2:  \\B(/\\S+?):(\\d+)(?=:|$)
+URxvt.matcher.launcher.2: rvim +$2 $1
+
+!URxvt.selection-pastebin.url: http://www.ta-sa.org/files/txt/%
+!URxvt.selection-pastebin.cmd: rsync -apP % ruth:/var/www/www.ta-sa.org/files/txt/.
+!URxvt.keysym.C-M-e: perl:selection-pastebin:remote-pastebin
+
+URxvt.perl-ext-common:	default,selection-autotransform,tabbed,keyboard-select,url-select,clipboard
+
+URxvt.selection-autotransform.0: s/^([^:[:space:]]+):(\\d+):?$/vim +$2 \\Q$1\\E\\x0d/
+
+!!--[URxvt tab support, Shift-Left Right and Down creates new tabs]---
+URxvt.tabbed.tabbar-fg:	10
+URxvt.tabbed.tabbar-bg:	#000000
+URxvt.tabbed.tab-fg:	4
+URxvt.tabbed.tab-bg:	#000000
+
+!!-[URxvt-perls = keyboard-select]---
+URxvt.keysym.M-Escape:	perl:keyboard-select:activate
+URxvt.keysym.M-s:		perl:keyboard-select:search
+
+
+!!-[URxvt-perls = clipboard]---
+URxvt.clipboard.copycmd:  xclip -i -selection clipboard
+URxvt.clipboard.pastecmd: xclip -o -selection clipboard
+
+URxvt.keysym.M-c:	perl:clipboard:copy
+URxvt.keysym.M-v:	perl:clipboard:paste
+URxvt.keysym.M-C-v:	perl:clipboard:paste_escaped
+
+
+!!-[URxvt-perls = url-select]---
 URxvt.url-select.launcher:   /usr/bin/dwb -x O 
+URxvt.url-select.button:  true
 URxvt.url-select.underline: true
+
+URxvt.keysym.M-u:    perl:url-select:select_next
+
 
 !-[colors]----
 URxvt*cursorColor:	#A7BF76

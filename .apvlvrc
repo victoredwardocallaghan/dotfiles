@@ -1,0 +1,4 @@
+set autoreload = 5
+set zoom = fitwidth
+set noinfo = yes
+set visualmode = yes

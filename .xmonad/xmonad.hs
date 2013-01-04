@@ -30,6 +30,7 @@ import XMonad.Hooks.ManageHelpers
 import qualified XMonad.StackSet as W
  
 myBrowser       = "dwb"
+myEditor        = "rvim"
 myTerminal      = "urxvt"
 myScreenLock    = "xscreensaver-command -lock"
 myBorderWidth   = 1
@@ -83,10 +84,10 @@ myKeys = \conf -> mkKeymap conf $
                 , ("M-x M-x",      nextScreen)
                 , ("M-u M-x M-x",  swapNextScreen)
                 , ("M-x w",        spawn myBrowser)
-                , ("M-x e",        spawn "emacsclient -c -s emacs")
+                , ("M-x e",        spawn myEditor)
                 , ("M-x s",        spawn "swiftfox")
                 , ("M-x t",        spawn "tvbrowser")
-                , ("M-x d",        spawn "deluge")
+                , ("M-x d",        spawn "rtorrent")
                 , ("M-x <Return>", spawn $ XMonad.terminal conf)
                 , ("M-w",          sendMessage MagnifyMore)
                 , ("M-e",          sendMessage MagnifyLess)
@@ -109,7 +110,8 @@ isVisible = do
 -- Config for Prompt
 oxyXPConfig :: XPConfig
 oxyXPConfig = defaultXPConfig { font              = "xft:Consolas-12"
-                              , bgColor           = "Aquamarine3"
+                              --, bgColor           = "Aquamarine3"
+                              , bgColor           = "orange"
                               , fgColor           = "black"
                               , fgHLight          = "black"
                               , bgHLight          = "darkslategray4"

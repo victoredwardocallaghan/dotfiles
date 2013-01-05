@@ -1,1 +1,1 @@
-set dis intel
+set disassembly intel

@@ -2,11 +2,15 @@ alias down='aria2c --conf-path=${HOME}/.aria2/aria2.conf'
 alias rapid='aria2c --conf-path=${HOME}/.aria2/aria2.rapidshare'
 alias torrent='aria2c --conf-path=${HOME}/.aria2/aria2.torrent'
 
+alias printers='lpstat -p -d'
+alias print='lp -o sides=two-sided-long-edge outputorder=reverse job-sheets=confidential,confidential prettyprint '
+
 # modified commands
 alias diff='colordiff'              # requires colordiff package
 alias top='htop'
 alias pacman='pacman-color'
 alias tree='tree -C'
+alias wifi-menu='sudo wifi-menu'
 
 # Tmux aliases
 alias tatt='tmux attach-session -t'

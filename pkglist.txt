@@ -25,6 +25,7 @@ automake
 avahi
 bash
 bash-completion
+bc
 bison
 blas
 bluez
@@ -60,6 +61,7 @@ dbus-glib
 dconf
 desktop-file-utils
 device-mapper
+dsniff
 dhcpcd
 dialog
 diffutils
@@ -104,6 +106,7 @@ gawk
 gc
 gconf
 gd
+gdb
 gdbm
 gdk-pixbuf2
 gettext
@@ -137,6 +140,10 @@ gtk2
 gtk3
 guile
 gzip
+hping
+hplip
+libcups
+cups-pdf
 haddock
 happy
 harfbuzz

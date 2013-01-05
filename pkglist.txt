@@ -189,6 +189,7 @@ irssi
 isl
 iso-codes
 iw
+john
 jack
 jansson
 jasper
@@ -386,6 +387,7 @@ ncurses
 net-snmp
 net-tools
 netcfg
+tcpdump
 netpbm
 nettle
 nmap

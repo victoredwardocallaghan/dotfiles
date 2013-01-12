@@ -2,8 +2,13 @@ alias down='aria2c --conf-path=${HOME}/.aria2/aria2.conf'
 alias rapid='aria2c --conf-path=${HOME}/.aria2/aria2.rapidshare'
 alias torrent='aria2c --conf-path=${HOME}/.aria2/aria2.torrent'
 
+alias hping='sudo hping'
+alias dsniff='sudo dsniff'
+alias tcpdump='sudo tcpdump'
+
 alias printers='lpstat -p -d'
-alias print='lp -o sides=two-sided-long-edge outputorder=reverse job-sheets=confidential,confidential prettyprint '
+#alias print='lp -o "sides=two-sided-long-edge outputorder=reverse job-sheets=confidential,confidential prettyprint" '
+alias print='lp -o "sides=two-sided-long-edge prettyprint" '
 
 # modified commands
 alias diff='colordiff'              # requires colordiff package

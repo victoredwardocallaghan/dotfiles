@@ -408,7 +408,6 @@ openssl
 orc
 p11-kit
 p7zip
-packer
 pacman
 pacman-color
 pacman-mirrorlist

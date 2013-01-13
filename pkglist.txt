@@ -30,6 +30,7 @@ bc
 bison
 blas
 bluez
+bitlbee
 bridge-utils
 bzip2
 c-ares

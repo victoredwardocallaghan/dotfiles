@@ -45,7 +45,6 @@ colord
 colordiff
 colormake
 compositeproto
-consolekit
 coreutils
 cracklib
 crda
@@ -507,13 +506,11 @@ sqlite
 squashfs-tools
 sratom
 startup-notification
-steam
 strace
 sudo
 sysfsutils
 syslog-ng
 systemd
-systemd-arch-units
 sysvinit-tools
 t1lib
 taglib
@@ -576,7 +573,6 @@ webkitgtk2
 wget
 which
 whois
-wine
 wireless-regdb
 wireless_tools
 wpa_actiond

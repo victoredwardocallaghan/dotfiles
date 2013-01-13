@@ -31,6 +31,7 @@ bison
 blas
 bluez
 bitlbee
+libotr3
 bridge-utils
 bzip2
 c-ares

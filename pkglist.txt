@@ -131,6 +131,7 @@ gpgme
 gpm
 graphite
 grep
+rsync
 groff
 gsettings-desktop-schemas
 gsm

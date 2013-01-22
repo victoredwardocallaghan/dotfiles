@@ -1,9 +1,52 @@
+#
+### Find keyscan codes
+### xev | grep -A2 --line-buffered '^KeyRelease' | sed -n '/keycode /s/^.*keycode \([0-9]*\).* (.*, \(.*\)).*$/\1 \2/p''
+#
+
+## Volume Controls ##
 # Increase volume
-"amixer set Master playback 1+"
+"amixer set Master playback 5+"
     m:0x0 + c:123
     XF86AudioRaiseVolume
 
 # Decrease volume
-"amixer set Master playback 1-"
+"amixer set Master playback 5-"
     m:0x0 + c:122
     XF86AudioLowerVolume
+
+# Mute volume
+"amixer set Master toggle"
+   XF86AudioMute
+
+# FIXME !
+# Mute microphone
+#"amixer set Mic toggle"
+#    m:0x0 + c:248
+#   XF86AudioMic
+
+## Xserver Controls ##
+# Lock (Fn+F3)
+"xscreensaver-command --lock"
+   XF86ScreenSaver
+
+# Increase screen brightness (Fn+F9)
+"xbacklight -inc 10"
+   XF86MonBrightnessUp
+
+# Decrease screen brightness (Fn+F8)
+"xbacklight -dec 10"
+   XF86MonBrightnessDown
+
+# mocp as music player frontend
+"mocp --next"
+   XF86AudioNext
+
+"mocp --previous"
+   XF86AudioPrev
+
+"mocp --toggle-pause"
+   XF86AudioPlay
+
+# Launcher (right of the Mic Mute)
+"action"
+   XF86Launch1

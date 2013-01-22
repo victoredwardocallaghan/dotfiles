@@ -1,3 +1,4 @@
+libtxc_dxtn
 tcplay
 ntfsprogs
 ntfs-3g

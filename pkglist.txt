@@ -1,5 +1,12 @@
+tcplay
 ntfsprogs
 ntfs-3g
+ncmpcpp
+mpd
+libmpdclient
+fftw
+libao
+libmms
 a52dec
 abook
 acl
@@ -90,6 +97,7 @@ expat
 faad2
 fakeroot
 feh
+ncrack
 ffmpeg
 file
 filesystem
@@ -123,6 +131,7 @@ glibc
 glproto
 glu
 gmp
+gnome-icon-theme
 gnokii
 gnupg
 gnutls
@@ -220,7 +229,6 @@ libass
 libassuan
 libasyncns
 libburn
-libcanberra
 libcap
 libcap-ng
 libcl
@@ -247,7 +255,6 @@ libgcrypt
 libgl
 libglade
 libglapi
-libgnome-keyring
 libgpg-error
 libgphoto2
 libgssglue
@@ -447,7 +454,6 @@ pkg-config
 pm-quirks
 pm-utils
 polkit
-polkit-gnome
 poppler
 poppler-data
 poppler-glib
@@ -604,7 +610,6 @@ xf86vidmodeproto
 xfburn
 xfconf
 xfsprogs
-xine-lib
 xineramaproto
 xkeyboard-config
 xmlrpc-c

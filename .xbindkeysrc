@@ -38,13 +38,16 @@
    XF86MonBrightnessDown
 
 # mocp as music player frontend
-"mocp --next"
+#"mocp --next"
+"ncmpcpp next"
    XF86AudioNext
 
-"mocp --previous"
+#"mocp --previous"
+"ncmpcpp prev"
    XF86AudioPrev
 
-"mocp --toggle-pause"
+#"mocp --toggle-pause"
+"ncmpcpp toggle"
    XF86AudioPlay
 
 # Launcher (right of the Mic Mute)

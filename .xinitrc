@@ -49,6 +49,11 @@ xbindkeys &
 #trayer --edge top --align right --SetDockType true --SetPartialStrut true \
 # --expand true --widthtype request --transparent true --tint 0x191970 --height 9 &
 
+## $ systemctl --user enable mpd
+## $ systemctl --user start mpd
+#run systemd as user instance
+systemd --user &
+
 # bring up window manager
 exec xmonad
 

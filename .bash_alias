@@ -10,6 +10,8 @@ alias printers='lpstat -p -d'
 #alias print='lp -o "sides=two-sided-long-edge outputorder=reverse job-sheets=confidential,confidential prettyprint" '
 alias print='lp -o "sides=two-sided-long-edge prettyprint" '
 
+alias music='ncmpcpp'
+
 # modified commands
 alias diff='colordiff'              # requires colordiff package
 alias top='htop'

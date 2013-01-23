@@ -1,9 +1,9 @@
 [Unit]
-Description = Music Player Daemon
+Description = RXVT-unicode Daemon
 After=xinitrc.target
 
 [Service]
-ExecStart = /usr/bin/mpd --no-daemon
+ExecStart = /usr/bin/urxvtd -q -o -f
 Restart = always
 
 [Install]

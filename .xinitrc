@@ -37,13 +37,13 @@ xset +dpms
 xset dpms 0 0 300
 
 # human eyes saving tweaks
-redshift &
+#redshift &
 
 # mouse speed tweaks
 xset mouse 7 1
 
 # setup media key binding
-xbindkeys &
+#xbindkeys &
 
 # setup an icon tray
 #trayer --edge top --align right --SetDockType true --SetPartialStrut true \

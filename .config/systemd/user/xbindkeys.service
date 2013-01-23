@@ -1,0 +1,10 @@
+[Unit]
+Description = Media Key Binding
+After=xinitrc.target
+
+[Service]
+ExecStart = /usr/bin/xbindkeys
+KillMode=process
+
+[Install]
+WantedBy = default.target

@@ -1,9 +1,9 @@
 [Unit]
-Description = Music Player Daemon
+Description = Timezone Monitor Gamma
 After=xinitrc.target
 
 [Service]
-ExecStart = /usr/bin/mpd --no-daemon
+ExecStart = /usr/bin/redshift
 Restart = always
 
 [Install]

@@ -1,3 +1,6 @@
+kexec-tools
+openvpn
+ispell
 libtxc_dxtn
 tcplay
 ntfsprogs

@@ -1,0 +1,10 @@
+[Unit]
+DefaultDependencies=no
+Before=shutdown.target umount.target final.target
+
+[Service]
+Type=oneshot
+ExecStart=/sbin/kexec -l /boot/vmlinuz-linux --initrd=/boot/initramfs-linux.img --reuse-cmdline
+
+[Install]
+WantedBy=kexec.target

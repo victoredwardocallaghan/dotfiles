@@ -4,7 +4,7 @@
 Description=your window manager service
 Before=xinitrc.target
 After=xorg.target
- 
+
 [Service]
 Requires=xorg.target
 #Environment=PATH=uncomment:to:override:your:PATH
@@ -12,6 +12,6 @@ Environment=DISPLAY=:0
 ExecStart=/usr/bin/xmonad
 Restart=always
 RestartSec=10
- 
+
 [Install]
 WantedBy=wm.target

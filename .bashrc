@@ -25,10 +25,9 @@ if [ -f /etc/bash_completion ]; then
     . /etc/bash_completion
 fi
 
-export PATH="/usr/lib/cw:$PATH"
-
-export CW_COLORIZE=purple:green
-export NOCOLOR_PIPE=1
+#export PATH="/usr/lib/cw:$PATH"
+#export CW_COLORIZE=purple:green
+#export NOCOLOR_PIPE=1
 
 # Reset
 Color_Off='\e[0m'       # Text Reset

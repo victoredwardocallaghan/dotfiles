@@ -67,7 +67,6 @@ cronie
 cryptsetup
 ctags
 curl
-cw
 cyrus-sasl
 damageproto
 db

@@ -24,7 +24,7 @@ urxvt*foreground:	#7f8f9f
 urxvt*background:	#0c0d0e
 URxvt*saveLines:	1000
 !URxvt.font:	xft:DejaVu Sans Mono:antialias=true:pixelsize=13
-URxvt.font:	xft:Inconsolata:antialias=true:pixelsize=13
+URxvt.font:	xft:Inconsolata:antialias=true
 URxvt*cursorBlink:	true
 URxvt*transparent:	true
 URxvt*allow_bold:	true
@@ -32,6 +32,7 @@ URxvt*allow_bold:	true
 URxvt*scrollBar:	false
 URxvt*colorUL:	#7FB0F1
 URxvt*.underlineColor:   yellow
+URxvt*.urgentOnBell: true
 
 !!-[URxvt per-line display filtering]--
 URxvt.perl-ext:      default,matcher

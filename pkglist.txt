@@ -1,3 +1,4 @@
+hunspell-en
 ttf-inconsolata
 terminus-font
 kexec-tools

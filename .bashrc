@@ -25,9 +25,16 @@ if [ -f /etc/bash_completion ]; then
     . /etc/bash_completion
 fi
 
+# Git PS1 Prompt
+source ~/.git-prompt.sh
+
 #export PATH="/usr/lib/cw:$PATH"
 #export CW_COLORIZE=purple:green
 #export NOCOLOR_PIPE=1
+
+## Andorid kernel.
+export ARCH=arm
+export CROSS_COMPILE=/home/edward/Work/Mike/ToolChain/arm-eabi-4.7/bin/arm-eabi-
 
 # Reset
 Color_Off='\e[0m'       # Text Reset
@@ -123,8 +130,9 @@ fi
 #PS1="\[\e[01;31m\]┌─[\[\e[01;35m\u\e[01;31m\]]──[\[\e[00;37m\]${HOSTNAME%%.*}\[\e[01;32m\]]:\w$\[\e[01;31m\]\n\[\e[01;31m\]└──\[\e[01;36m\]>>\[\e[0m\]"
 #PS1='[\u@\h \W]\$ '
 
-PS1="\[\e[0;37m\]┌─[${root}\u\[\e[0;37m\]]\[\j\][\[\e[0;96m\]\h\[\e[0;37m\]][\[\e[0;32m\]\w\[\e[0;37m\]]\n\[\e[0;37m\]└──╼ \[\e[0m\]"
+PS1='\[\e[0;37m\]┌─[${root}\u\[\e[0;37m\]]\[\j\][\[\e[0;96m\]\h\[\e[0;37m\]][\[\e[0;32m\]\w\[\e[0;37m\]][\[\e[0;96m\]\W$(__git_ps1 " (%s)")\[\e[0;37m\]] \n\[\e[0;37m\]└──╼ \[\e[0m\] '
 PS2="╾──╼ "
+
 
 #Functions
 

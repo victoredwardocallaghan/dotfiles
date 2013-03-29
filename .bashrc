@@ -27,6 +27,9 @@ fi
 
 # Git PS1 Prompt
 source ~/.git-prompt.sh
+GIT_PS1_SHOWDIRTYSTATE=1
+GIT_PS1_SHOWCOLORHINTS=1
+GIT_PS1_DESCRIBE_STYLE="contains"
 
 #export PATH="/usr/lib/cw:$PATH"
 #export CW_COLORIZE=purple:green
@@ -118,8 +121,8 @@ export HISTCONTROL=erasedups
 export HISTSIZE=500
 export HISTIGNORE=ls:'ls -l':fg
 
-red="\[\e[0;33m\]"
-yellow="\[\e[0;31m\]"
+#red="\[\e[0;33m\]"
+#yellow="\[\e[0;31m\]"
 
 if [ `id -u` -eq "0" ]; then
 	root="${yellow}"
@@ -127,14 +130,72 @@ else
 	root="${red}"
 fi
 
-#PS1="\[\e[01;31m\]┌─[\[\e[01;35m\u\e[01;31m\]]──[\[\e[00;37m\]${HOSTNAME%%.*}\[\e[01;32m\]]:\w$\[\e[01;31m\]\n\[\e[01;31m\]└──\[\e[01;36m\]>>\[\e[0m\]"
-#PS1='[\u@\h \W]\$ '
 
-PS1='\[\e[0;37m\]┌─[${root}\u\[\e[0;37m\]]\[\j\][\[\e[0;96m\]\h\[\e[0;37m\]][\[\e[0;32m\]\w\[\e[0;37m\]][\[\e[0;96m\]\W$(__git_ps1 " (%s)")\[\e[0;37m\]] \n\[\e[0;37m\]└──╼ \[\e[0m\] '
+#PS1="\[\e[01;31m\]┌─[\[\e[01;35m\u\e[01;31m\]]──[\[\e[00;37m\]${HOSTNAME%%.*}\[\e[01;32m\]]:\w$\[\e[01;31m\]\n\[\e[01;31m\]└──\[\e[01;36m\]>>\[\e[0m\]"
+
+# Debug PS1 prompt, check color has been reset.
+#trap 'echo -ne "\e[0m"' DEBUG
+
+PS1='\[\e[0;37m\]┌─[$(battery_status)][${root}\u\[\e[0;37m\]]\[\j\][\[\e[0;96m\]\h\[\e[0;37m\]][\[\e[0;32m\]\w\[\e[0;37m\]][\[\e[0;96m\]\W$(__git_ps1 " (%s)")\[\e[0;37m\]] \n\[\e[0;37m\]└──╼ \[\e[0m\] '
 PS2="╾──╼ "
 
 
 #Functions
+
+#Check battery levels
+battery_status()
+{
+#BATTERY=/proc/acpi/battery/BAT0
+BATTERY=/sys/class/power_supply/BAT0
+
+#REM_CAP=`grep "^remaining capacity" $BATTERY/state | awk '{ print $3 }'`
+#FULL_CAP=`grep "^last full capacity" $BATTERY/info | awk '{ print $4 }'`
+#BATSTATE=`grep "^charging state" $BATTERY/state | awk '{ print $3 }'`
+
+REM_CAP=`cat $BATTERY/energy_now`
+FULL_CAP=`cat $BATTERY/energy_full`
+BATSTATE=`cat $BATTERY/status`
+
+CHARGE=`echo $(( $REM_CAP * 100 / $FULL_CAP ))`
+
+NON='\033[00m'
+BLD='\033[01m'
+RED='\033[01;31m'
+GRN='\033[01;32m'
+YEL='\033[01;33m'
+
+COLOUR="$RED"
+
+case "${BATSTATE}" in
+   'charged')
+   BATSTT="$BLD=$NON"
+   ;;
+   'charging')
+   BATSTT="$BLD+$NON"
+   ;;
+   'Discharging')
+   BATSTT="$BLD-$NON"
+   ;;
+esac
+
+# prevent a charge of more than 100% displaying
+if [ "$CHARGE" -gt "99" ]
+then
+   CHARGE=100
+fi
+
+if [ "$CHARGE" -gt "15" ]
+then
+   COLOUR="$YEL"
+fi
+
+if [ "$CHARGE" -gt "30" ]
+then
+   COLOUR="$GRN"
+fi
+
+echo -e "${BATSTT}${COLOUR}${CHARGE}%${NON}"
+}
 
 #Create archive
 

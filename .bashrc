@@ -121,26 +121,29 @@ export HISTCONTROL=erasedups
 export HISTSIZE=500
 export HISTIGNORE=ls:'ls -l':fg
 
-#red="\[\e[0;33m\]"
-#yellow="\[\e[0;31m\]"
-
-if [ `id -u` -eq "0" ]; then
-	root="${yellow}"
-else
-	root="${red}"
-fi
-
 
 #PS1="\[\e[01;31m\]┌─[\[\e[01;35m\u\e[01;31m\]]──[\[\e[00;37m\]${HOSTNAME%%.*}\[\e[01;32m\]]:\w$\[\e[01;31m\]\n\[\e[01;31m\]└──\[\e[01;36m\]>>\[\e[0m\]"
 
 # Debug PS1 prompt, check color has been reset.
 #trap 'echo -ne "\e[0m"' DEBUG
+#set -x
 
-PS1='\[\e[0;37m\]┌─[$(battery_status)][${root}\u\[\e[0;37m\]]\[\j\][\[\e[0;96m\]\h\[\e[0;37m\]][\[\e[0;32m\]\w\[\e[0;37m\]][\[\e[0;96m\]\W$(__git_ps1 " (%s)")\[\e[0;37m\]] \n\[\e[0;37m\]└──╼ \[\e[0m\] '
-PS2="╾──╼ "
+PS1='\[\e[0;37m\]┌─[$(battery_status)\[\e[0;37m\]]\j[$(user_color)\u\[\e[0;37m\]][\[\e[0;96m\]\h\[\e[0;37m\]][\[\e[0;32m\]\w\[\e[0;37m\]][\[\e[0;96m\]\W$(__git_ps1 " (%s)")\[\e[0;37m\]] \n\[\e[0;37m\]└──╼ \[\e[0m\]'
+PS2="╾──╼"
 
 
 #Functions
+
+user_color () {
+
+if [ `id -u` -eq "0" ]; then
+	root="${BRed}"
+else
+	root="${BPurple}"
+fi
+
+echo -e "${root}"
+}
 
 #Check battery levels
 battery_status()
@@ -158,19 +161,18 @@ BATSTATE=`cat $BATTERY/status`
 
 CHARGE=`echo $(( $REM_CAP * 100 / $FULL_CAP ))`
 
-NON='\033[00m'
-BLD='\033[01m'
-RED='\033[01;31m'
-GRN='\033[01;32m'
-YEL='\033[01;33m'
+NON='\e[00m'
+BLD='\e[01m'
+BLKRed='\e[05;91m'
 
-COLOUR="$RED"
+COLOUR="$BLD$BLKRed"
+WARNING=""
 
 case "${BATSTATE}" in
-   'charged')
+   'Charged')
    BATSTT="$BLD=$NON"
    ;;
-   'charging')
+   'Charging')
    BATSTT="$BLD+$NON"
    ;;
    'Discharging')
@@ -184,17 +186,22 @@ then
    CHARGE=100
 fi
 
+if [ "$CHARGE" -lt "5" ]
+then
+	WARNING="${BLKRed}( BATTERY WARNING! ) "
+fi
+
 if [ "$CHARGE" -gt "15" ]
 then
-   COLOUR="$YEL"
+   COLOUR="$Yellow"
 fi
 
 if [ "$CHARGE" -gt "30" ]
 then
-   COLOUR="$GRN"
+   COLOUR="$Green"
 fi
 
-echo -e "${BATSTT}${COLOUR}${CHARGE}%${NON}"
+echo -e "${WARNING}${BATSTT}${COLOUR}${CHARGE}%${NON}"
 }
 
 #Create archive

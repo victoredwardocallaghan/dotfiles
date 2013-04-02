@@ -1,3 +1,7 @@
+perl-net-smtp-ssl
+perl-authen-sasl
+perl-mime-base64
+colorgcc
 hunspell-en
 ttf-inconsolata
 terminus-font
@@ -424,7 +428,6 @@ orc
 p11-kit
 p7zip
 pacman
-pacman-color
 pacman-mirrorlist
 pam
 pambase

@@ -13,7 +13,6 @@ alias print='lp -o "sides=two-sided-long-edge prettyprint" '
 alias music='ncmpcpp'
 
 # modified commands
-alias pacman='PACMAN=/usr/bin/pacman; [ -f /usr/bin/pacman-color ] && PACMAN=/usr/bin/pacman-color; $PACMAN $@'
 alias diff='colordiff'              # requires colordiff package
 alias top='htop'
 alias tree='tree -C'

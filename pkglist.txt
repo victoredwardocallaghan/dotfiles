@@ -1,3 +1,4 @@
+distcc
 perl-net-smtp-ssl
 perl-authen-sasl
 perl-mime-base64

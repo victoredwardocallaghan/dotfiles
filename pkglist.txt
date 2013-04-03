@@ -1,3 +1,5 @@
+xmlto
+docbook-xsl
 abs
 base-devel
 distcc

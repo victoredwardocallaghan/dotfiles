@@ -1,3 +1,5 @@
+abs
+base-devel
 distcc
 perl-net-smtp-ssl
 perl-authen-sasl

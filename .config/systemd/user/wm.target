@@ -1,6 +1,7 @@
 [Unit]
 Description=Window manager target
-Wants=xorg.target
+#Wants=xorg.target
+Wants=graphical.target
 Wants=xinitrc.target
 Requires=dbus.socket
 AllowIsolate=true

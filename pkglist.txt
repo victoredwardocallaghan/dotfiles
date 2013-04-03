@@ -412,7 +412,7 @@ mutt
 ncurses
 net-snmp
 net-tools
-netcfg
+netctl
 tcpdump
 netpbm
 nettle

@@ -3,7 +3,8 @@ Description = Music Player Daemon
 After=xinitrc.target
 
 [Service]
-ExecStart = /usr/bin/mpd --no-daemon
+ExecStart = /usr/bin/mpd %h/.mpd/mpd.conf --no-daemon
+ExecStop = /usr/bin/mpd %h/.mpd/mpd.conf --kill
 Restart = always
 
 [Install]

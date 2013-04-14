@@ -1,27 +1,56 @@
-"colors
+" Copyright © 2013 Edward O'Callaghan. All Rights Reserved.
+"
+" File: ~/.vimrc.local
+" Author: Edward O'Callaghan
+" Description::
+" Last Modified: April 14, 2013"
+" ---------------------------------------------------------
+
+
+" Snips
+" ---------------------------------------------------------
+let g:snips_author = "Edward O'Callaghan"
+" ---------------------------------------------------------"
+
+" ViM Colours
+" ---------------------------------------------------------
 "colorscheme candycode
 "colorscheme wombat256mod
 colorscheme molokai
+" ---------------------------------------------------------"
+
+" Enable omni completion
+" ---------------------------------------------------------
+autocmd FileType haskell setlocal omnifunc=necoghc#omnifunc
+" ---------------------------------------------------------"
+
+" Hotkey
+" ---------------------------------------------------------
+set pastetoggle=<F2> " F2 toggles paste mode
+nmap <F8> :TagbarToggle<CR>
+" ---------------------------------------------------------"
 
 " LaTeX Live Preview
-" "--------------------------------
+" ---------------------------------------------------------
 autocmd FileType tex silent :! (file="%"; pdflatex % &>/dev/null && mupdf "${file/.tex/.pdf}" &>/dev/null) &
 command! Reload :! (pdflatex % &>/dev/null) &
 au BufWritePost *.tex silent Reload "
 let tex_preview_always_autosave = 0
-
-" PKGBUILD stuff
-autocmd FileType PKGBUILD set expandtab shiftwidth=2 softtabstop=4
-"
-" " sh stuff
-autocmd FileType sh set expandtab shiftwidth=2 softtabstop=4
-
-
 " LaTeX
-autocmd Filetype tex,latex set grepprg=grep\ -nH\ $
+autocmd Filetype tex,latex let g:tex_flavor = "latex"
 autocmd Filetype tex,latex setlocal spell
 autocmd Filetype tex,latex set grepprg=grep\ -nH\ $
-autocmd Filetype tex,latex let g:tex_flavor = "latex"
+" ---------------------------------------------------------"
+
+" PKGBUILD stuff
+" ---------------------------------------------------------
+autocmd FileType PKGBUILD set expandtab shiftwidth=2 softtabstop=4
+" ---------------------------------------------------------"
+
+" SH stuff
+" ---------------------------------------------------------
+autocmd FileType sh set expandtab shiftwidth=2 softtabstop=4
+" ---------------------------------------------------------"
 
 " Latex Box Plugin
 " ---------------------------------------------------------
@@ -32,14 +61,18 @@ let g:LatexBox_latexmk_options = '-pv'
 " ---------------------------------------------------------"
 
 " C# stuff
+" ---------------------------------------------------------
 "let current_compiler = "mcs"
 let g:easytags_cmd = '/usr/bin/ctags'
 let g:easytags_dynamic_files = 1
 set tags=./tags;
+" ---------------------------------------------------------"
 
-" vim.Gist
+" ViM.Gist
+" ---------------------------------------------------------
 let g:gist_detect_filetype = 1
 let g:gist_post_private = 1
 let g:gist_clip_command = 'xclip -selection clipboard'
 let g:gist_browser_command = 'dwb -x O %URL%'
 let g:gist_open_browser_after_post = 1
+" ---------------------------------------------------------"

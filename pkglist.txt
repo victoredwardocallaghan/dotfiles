@@ -373,6 +373,7 @@ libyaml
 licenses
 lilv
 linux
+linux-docs
 linux-api-headers
 linux-firmware
 linux-headers

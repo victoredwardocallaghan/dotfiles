@@ -29,6 +29,7 @@ URxvt*cursorBlink:	true
 URxvt*transparent:	true
 URxvt*allow_bold:	true
 !URxvt*shading:	20
+URxvt.loginShell: true
 URxvt*scrollBar:	false
 URxvt*colorUL:	#7FB0F1
 URxvt*.underlineColor:   yellow

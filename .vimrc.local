@@ -36,3 +36,10 @@ let g:LatexBox_latexmk_options = '-pv'
 let g:easytags_cmd = '/usr/bin/ctags'
 let g:easytags_dynamic_files = 1
 set tags=./tags;
+
+" vim.Gist
+let g:gist_detect_filetype = 1
+let g:gist_post_private = 1
+let g:gist_clip_command = 'xclip -selection clipboard'
+let g:gist_browser_command = 'dwb -x O %URL%'
+let g:gist_open_browser_after_post = 1

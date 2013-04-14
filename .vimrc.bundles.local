@@ -1,0 +1,6 @@
+" Edward O'Callaghan
+" " My extra vim plugins
+Bundle 'MatlabFilesEdition'
+Bundle 'sherlock.vim'
+Bundle 'LaTeX-Box'
+Bundle 'vim-live-latex-preview'

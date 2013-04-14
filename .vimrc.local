@@ -1,0 +1,38 @@
+"colors
+"colorscheme candycode
+"colorscheme wombat256mod
+colorscheme molokai
+
+" LaTeX Live Preview
+" "--------------------------------
+autocmd FileType tex silent :! (file="%"; pdflatex % &>/dev/null && mupdf "${file/.tex/.pdf}" &>/dev/null) &
+command! Reload :! (pdflatex % &>/dev/null) &
+au BufWritePost *.tex silent Reload "
+let tex_preview_always_autosave = 0
+
+" PKGBUILD stuff
+autocmd FileType PKGBUILD set expandtab shiftwidth=2 softtabstop=4
+"
+" " sh stuff
+autocmd FileType sh set expandtab shiftwidth=2 softtabstop=4
+
+
+" LaTeX
+autocmd Filetype tex,latex set grepprg=grep\ -nH\ $
+autocmd Filetype tex,latex setlocal spell
+autocmd Filetype tex,latex set grepprg=grep\ -nH\ $
+autocmd Filetype tex,latex let g:tex_flavor = "latex"
+
+" Latex Box Plugin
+" ---------------------------------------------------------
+let g:LatexBox_latexmk_options="-pdf"
+let g:LatexBox_output_type="pdf"
+let g:LatexBox_viewer = 'mupdf'
+let g:LatexBox_latexmk_options = '-pv'
+" ---------------------------------------------------------"
+
+" C# stuff
+"let current_compiler = "mcs"
+let g:easytags_cmd = '/usr/bin/ctags'
+let g:easytags_dynamic_files = 1
+set tags=./tags;

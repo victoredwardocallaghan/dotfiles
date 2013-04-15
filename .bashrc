@@ -33,11 +33,11 @@ GIT_PS1_DESCRIBE_STYLE="branch"
 
 # Fix for remote systems that don't have
 # the rxvt-unicode-256color termcap entry.
-case "$TERM" in
-    rxvt-unicode-256color)
-        TERM=rxvt-unicode
-        ;;
-esac
+#case "$TERM" in
+#    rxvt-unicode-256color)
+#        TERM=rxvt-unicode
+#        ;;
+#esac
 
 #export PATH="/usr/lib/cw:$PATH"
 #export CW_COLORIZE=purple:green

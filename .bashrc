@@ -31,13 +31,22 @@ GIT_PS1_SHOWDIRTYSTATE=true
 GIT_PS1_SHOWCOLORHINTS=true
 GIT_PS1_DESCRIBE_STYLE="branch"
 
+# Fix for remote systems that don't have
+# the rxvt-unicode-256color termcap entry.
+case "$TERM" in
+    rxvt-unicode-256color)
+        TERM=rxvt-unicode
+        ;;
+esac
+
 #export PATH="/usr/lib/cw:$PATH"
 #export CW_COLORIZE=purple:green
 #export NOCOLOR_PIPE=1
 
 ## Andorid kernel.
 export ARCH=arm
-export CROSS_COMPILE=/home/edward/Work/Mike/ToolChain/arm-eabi-4.7/bin/arm-eabi-
+#export CROSS_COMPILE=/home/edward/Work/Mike/ToolChain/arm-eabi-4.7/bin/arm-eabi-
+export CROSS_COMPILE=/usr/bin/arm-none-eabi-
 
 # Reset
 Color_Off='\e[0m'       # Text Reset
@@ -116,6 +125,9 @@ export VISUAL=vim
 export EDITOR=vim
 
 export PATH=$PATH:~/.cabal/bin:/usr/local/android-sdk-linux/platform-tools
+
+# colorgcc package:
+export PATH="/usr/lib/colorgcc/bin:$PATH"
 
 export HISTCONTROL=erasedups
 export HISTSIZE=500

@@ -28,8 +28,9 @@ nmap <F4> :AuthorInfoDetect<cr>
 " ViM Colours
 " ---------------------------------------------------------
 set t_Co=256
-let g:jellybeans_use_lowcolor_black = 0
-colorscheme jellybeans
+"let g:jellybeans_use_lowcolor_black = 0
+"colorscheme jellybeans
+colorscheme xoria256
 "colorscheme phd
 "colorscheme candycode
 "colorscheme wombat256mod

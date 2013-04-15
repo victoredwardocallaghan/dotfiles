@@ -12,11 +12,23 @@
 let g:snips_author = "Edward O'Callaghan"
 " ---------------------------------------------------------"
 
+" AuthorInfo
+" ---------------------------------------------------------
+let g:vimrc_author="Edward O'Callaghan"
+let g:vimrc_email='victoredwardocallaghan@gmail.com'
+let g:vimrc_homepage='http://www.github.com/victoredwardocallaghan'
+
+nmap <F4> :AuthorInfoDetect<cr>
+" ---------------------------------------------------------"
+
 " ViM Colours
 " ---------------------------------------------------------
+let g:jellybeans_use_lowcolor_black = 0
+colorscheme jellybeans
+"colorscheme phd
 "colorscheme candycode
 "colorscheme wombat256mod
-colorscheme molokai
+"colorscheme molokai
 " ---------------------------------------------------------"
 
 " Enable omni completion

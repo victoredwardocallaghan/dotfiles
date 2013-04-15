@@ -6,6 +6,10 @@
 " Last Modified: April 14, 2013"
 " ---------------------------------------------------------
 
+" Misc
+" ---------------------------------------------------------
+let $PATH = $PATH . ':' . expand("~/.cabal/bin")
+" ---------------------------------------------------------"
 
 " Snips
 " ---------------------------------------------------------
@@ -23,6 +27,7 @@ nmap <F4> :AuthorInfoDetect<cr>
 
 " ViM Colours
 " ---------------------------------------------------------
+set t_Co=256
 let g:jellybeans_use_lowcolor_black = 0
 colorscheme jellybeans
 "colorscheme phd
@@ -33,7 +38,9 @@ colorscheme jellybeans
 
 " Enable omni completion
 " ---------------------------------------------------------
+setlocal omnifunc=necoghc#omnifunc
 autocmd FileType haskell setlocal omnifunc=necoghc#omnifunc
+let g:necoghc_enable_detailed_browse = 1
 " ---------------------------------------------------------"
 
 " Hotkey
@@ -64,6 +71,13 @@ autocmd FileType PKGBUILD set expandtab shiftwidth=2 softtabstop=4
 autocmd FileType sh set expandtab shiftwidth=2 softtabstop=4
 " ---------------------------------------------------------"
 
+" Text stuff
+" ---------------------------------------------------------
+autocmd BufNewFile,BufRead *.txt set filetype=pandoc
+let g:pandoc_use_hard_wraps = 1
+let g:pandoc_auto_format = 1
+" ---------------------------------------------------------"
+
 " Latex Box Plugin
 " ---------------------------------------------------------
 let g:LatexBox_latexmk_options="-pdf"
@@ -89,18 +103,16 @@ let g:gist_browser_command = 'dwb -x O %URL%'
 let g:gist_open_browser_after_post = 1
 " ---------------------------------------------------------"
 
-" HaskellMode-ViM
+" Haskell stuff
 " ---------------------------------------------------------
-" This assumes that ghc is in your path, if it is not, or you
-" wish to use a specific version of ghc, then please change
-" the ghc below to a full path to the correct one
+autocmd FileType haskell set ai sw=4 ts=4 sta et fo=croql
 au BufEnter *.hs compiler ghc
+map <LocalLeader>r :GHCi
 
-" For this section both of these should be set to your
-" browser and ghc of choice, I used the following
-" two vim lines to get those paths:
-" :r!which google-chrome
-" :r!which ghc
 let g:haddock_browser = "/usr/bin/dwb -x O "
 let g:ghc = "/usr/bin/ghc"
+
+au BufNewFile,BufRead *.hs map <buffer> <F1> :Hoogle
+au BufNewFile,BufRead *.hs map <buffer> <C-F1> :HoogleClose<CR>
+au BufNewFile,BufRead *.hs map <buffer> <S-F1> :HoogleLine<CR>
 " ---------------------------------------------------------"

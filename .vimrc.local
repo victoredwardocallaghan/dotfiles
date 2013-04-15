@@ -76,3 +76,19 @@ let g:gist_clip_command = 'xclip -selection clipboard'
 let g:gist_browser_command = 'dwb -x O %URL%'
 let g:gist_open_browser_after_post = 1
 " ---------------------------------------------------------"
+
+" HaskellMode-ViM
+" ---------------------------------------------------------
+" This assumes that ghc is in your path, if it is not, or you
+" wish to use a specific version of ghc, then please change
+" the ghc below to a full path to the correct one
+au BufEnter *.hs compiler ghc
+
+" For this section both of these should be set to your
+" browser and ghc of choice, I used the following
+" two vim lines to get those paths:
+" :r!which google-chrome
+" :r!which ghc
+let g:haddock_browser = "/usr/bin/dwb -x O "
+let g:ghc = "/usr/bin/ghc"
+" ---------------------------------------------------------"

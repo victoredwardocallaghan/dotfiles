@@ -37,13 +37,25 @@ xset +dpms
 xset dpms 0 0 300
 
 # human eyes saving tweaks
-#redshift &
+redshift &
 
 # mouse speed tweaks
 xset mouse 7 1
 
+# Setup X Compose for entering Unicode characters
+# e.g., “Compose+'+a*” for ‘α’.
+setxkbmap -option compose:rctrl
+# This remaps Alt_R to AltGr, granting access to ¬ (AltGr+\) for making ¬_¬ smileys
+# and giving me simpler key combos for commonly-used glyphs like µ (AltGr+m) and © (AltGr+c).
+setxkbmap -option lv3:ralt_switch
+
+## !! NOTE WELL !!: Setup thinkpad keyboard layout for T series
+# Find current by: setxkbmap -query
+# setxkbmap us
+#setxkbmap -model thinkpad60
+
 # setup media key binding
-#xbindkeys &
+xbindkeys &
 
 # setup an icon tray
 #trayer --edge top --align right --SetDockType true --SetPartialStrut true \
@@ -54,8 +66,8 @@ xset mouse 7 1
 #run systemd as user instance
 systemd --user &
 
+# setup fast terminal lunch
+urxvtd -q -f -o
+
 # bring up window manager
 exec xmonad
-
-# setup fast terminal lunch
-#urxvtd -q -f -o

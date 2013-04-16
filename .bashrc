@@ -121,8 +121,14 @@ On_IPurple='\e[10;95m'  # Purple
 On_ICyan='\e[0;106m'    # Cyan
 On_IWhite='\e[0;107m'   # White
 
+#
 export VISUAL=vim
 export EDITOR=vim
+
+# Use ViM Pager as the default system pager instead of less
+export PAGER=/usr/bin/vimpager
+alias less=$PAGER
+alias zless=$PAGER
 
 export PATH=$PATH:~/.cabal/bin:/usr/local/android-sdk-linux/platform-tools
 

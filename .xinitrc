@@ -44,15 +44,22 @@ xset mouse 7 1
 
 # Setup X Compose for entering Unicode characters
 # e.g., “Compose+'+a*” for ‘α’.
-setxkbmap -option compose:rctrl
+# Ensure no options are currently set and change layout variant for more unicode's
+setxkbmap -option
+setxkbmap -variant altgr-intl
+# setxkbmap -option 'compose:caps'
+setxkbmap -option 'compose:rctrl'
 # This remaps Alt_R to AltGr, granting access to ¬ (AltGr+\) for making ¬_¬ smileys
 # and giving me simpler key combos for commonly-used glyphs like µ (AltGr+m) and © (AltGr+c).
-setxkbmap -option lv3:ralt_switch
+setxkbmap -option 'lv3:ralt_switch'
 
 ## !! NOTE WELL !!: Setup thinkpad keyboard layout for T series
 # Find current by: setxkbmap -query
 # setxkbmap us
 #setxkbmap -model thinkpad60
+
+# Work around Gtk not taking unicode from the keyboard.
+export GTK_IM_MODULE=xim
 
 # setup media key binding
 xbindkeys &

@@ -25,6 +25,7 @@ urxvt*background:	#0c0d0e
 URxvt*saveLines:	1000
 !URxvt.font:	xft:DejaVu Sans Mono:antialias=true:pixelsize=13
 URxvt.font:	xft:Inconsolata:antialias=true
+URxvt.boldfont:	xft:Inconsolata:bold:antialias=true
 URxvt*cursorBlink:	true
 URxvt*transparent:	true
 URxvt*allow_bold:	true

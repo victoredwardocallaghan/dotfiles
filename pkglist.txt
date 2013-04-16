@@ -1,3 +1,4 @@
+vimpager
 xdotool
 xmlto
 docbook-xsl

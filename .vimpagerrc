@@ -1,0 +1,9 @@
+" Copyright © 2013 Edward O'Callaghan. All Rights Reserved.
+"
+" File: ~/.vimrc.local
+" Author: Edward O'Callaghan
+" Description::
+" Last Modified: April 14, 2013"
+" ---------------------------------------------------------
+
+set noloadplugins

@@ -1,3 +1,5 @@
+scala
+scala-docs
 vimpager
 xdotool
 xmlto

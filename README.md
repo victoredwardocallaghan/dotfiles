@@ -19,7 +19,6 @@ Requirements;
  * trayer - ensures space for status bar
  * ls++
  * colordiff
- * pacman-color
  * htop
  * tree
  * tmux - terminal multiplexer

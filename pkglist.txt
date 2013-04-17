@@ -1,3 +1,6 @@
+agda-lib
+agda-executable
+haskell-agda
 scala
 scala-docs
 vimpager

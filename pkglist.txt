@@ -29,7 +29,9 @@ tcplay
 ntfsprogs
 ntfs-3g
 ncmpcpp
+mpdscribble
 mpd
+mpc
 libmpdclient
 fftw
 libao

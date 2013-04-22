@@ -127,6 +127,7 @@ export EDITOR=vim
 
 # Use ViM Pager as the default system pager instead of less
 export PAGER=/usr/bin/vimpager
+export SDCV_PAGER=$PAGER
 alias less=$PAGER
 alias zless=$PAGER
 

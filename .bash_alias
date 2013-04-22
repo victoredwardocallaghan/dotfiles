@@ -17,6 +17,7 @@ alias diff='colordiff'              # requires colordiff package
 alias top='htop'
 alias tree='tree -C'
 alias wifi-menu='sudo wifi-menu'
+alias sdcv='sh ${HOME}/.scripts/sdcv.sh '
 
 # Tmux aliases
 alias tatt='tmux attach-session -t'

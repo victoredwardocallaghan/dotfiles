@@ -1,3 +1,7 @@
+wordnet
+stardict-wordnet
+tk
+sdcv
 agda-lib
 agda-executable
 haskell-agda
@@ -44,6 +48,7 @@ arp-scan
 archlinux-keyring
 aria2
 aspell
+aspell-en
 at-spi2-atk
 at-spi2-core
 atk

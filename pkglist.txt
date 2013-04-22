@@ -1,3 +1,5 @@
+mc
+calcurse
 wordnet
 stardict-wordnet
 tk

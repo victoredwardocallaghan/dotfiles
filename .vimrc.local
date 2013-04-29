@@ -9,6 +9,10 @@
 " Misc
 " ---------------------------------------------------------
 let $PATH = $PATH . ':' . expand("~/.cabal/bin")
+let g:Powerline_symbols = 'fancy'
+if has("gui_running")
+    set guifont="Anonymous Pro for Powerline"
+endif
 " ---------------------------------------------------------"
 
 " Snips
@@ -93,6 +97,46 @@ let g:LatexBox_latexmk_options = '-pv'
 let g:easytags_cmd = '/usr/bin/ctags'
 let g:easytags_dynamic_files = 1
 set tags=./tags;
+" ---------------------------------------------------------"
+
+" Tagbar support
+" ---------------------------------------------------------
+" ** VHDL support **
+let g:tagbar_type_vhdl = {
+    \ 'ctagstype': 'vhdl',
+    \ 'kinds' : [
+        \'d:prototypes',
+        \'b:package bodies',
+        \'e:entities',
+        \'a:architectures',
+        \'t:types',
+        \'p:processes',
+        \'f:functions',
+        \'r:procedures',
+        \'c:constants',
+        \'T:subtypes',
+        \'r:records',
+        \'C:components',
+        \'P:packages',
+        \'l:locals'
+    \]
+\}
+" ** Scala support **
+let g:tagbar_type_scala = {
+    \ 'ctagstype' : 'Scala',
+    \ 'kinds'     : [
+        \ 'p:packages:1',
+        \ 'V:values',
+        \ 'v:variables',
+        \ 'T:types',
+        \ 't:traits',
+        \ 'o:objects',
+        \ 'a:aclasses',
+        \ 'c:classes',
+        \ 'r:cclasses',
+        \ 'm:methods'
+    \ ]
+\ }
 " ---------------------------------------------------------"
 
 " ViM.Gist

@@ -1,3 +1,5 @@
+swig
+cmake
 mc
 calcurse
 wordnet
@@ -20,6 +22,8 @@ perl-net-smtp-ssl
 perl-authen-sasl
 perl-mime-base64
 colorgcc
+gcc-fortran
+openmpi
 hunspell-en
 ttf-inconsolata
 terminus-font

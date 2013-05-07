@@ -1,4 +1,4 @@
 #!/bin/bash
 
-export SDL_AUDIODRIVER=alsa 
+export SDL_AUDIODRIVER=alsa
 /usr/bin/steam

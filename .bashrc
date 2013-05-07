@@ -9,7 +9,7 @@
 
 if [ "$TERM" = "linux" ]; then
     _SEDCMD='s/.*\*color\([0-9]\{1,\}\).*#\([0-9a-fA-F]\{6\}\).*/\1 \2/p'
-    for i in $(sed -n "$_SEDCMD" $HOME/.Xresources | \
+    for i in $(sed -n "$_SEDCMD" $HOME/.Xresources.colours | \
                awk '$1 < 16 {printf "\\e]P%X%s", $1, $2}'); do
         echo -en "$i"
     done
@@ -132,6 +132,7 @@ alias less=$PAGER
 alias zless=$PAGER
 
 export PATH=$PATH:~/.cabal/bin:/usr/local/android-sdk-linux/platform-tools
+export PATH=$PATH:/usr/local/cryptol-academic-1.8.19/bin
 
 # colorgcc package:
 export PATH="/usr/lib/colorgcc/bin:$PATH"

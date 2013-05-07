@@ -19,10 +19,9 @@ URxvt*.dpi:	96
 URxvt*.depth: 32
 URxvt*tint:	#000000
 !URxvt*foreground:	grey
-!URxvt*background:	#242424
 !!urxvt*foreground:	#7f8f9f
 !!urxvt*background:	#0c0d0e
-URxvt.background: [95]#000000
+URxvt.background: [95]#242424
 URxvt*saveLines:	1000
 !URxvt.font:	xft:DejaVu Sans Mono:antialias=true:pixelsize=13
 !URxvt.font: xft:Inconsolata:antialias=true:hinting=true

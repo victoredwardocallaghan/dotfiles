@@ -606,9 +606,8 @@ util-linux
 v4l-utils
 valgrind
 vde2
-vi
 videoproto
-vim
+gvim
 vim-runtime
 vlc
 vnstat

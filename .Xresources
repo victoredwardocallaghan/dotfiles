@@ -26,19 +26,20 @@ URxvt.background: [95]#000000
 URxvt*saveLines:	1000
 !URxvt.font:	xft:DejaVu Sans Mono:antialias=true:pixelsize=13
 !URxvt.font: xft:Inconsolata:antialias=true:hinting=true
-!URxvt.boldFont:	xft:Inconsolata:bold:antialias=true
 !!  Inconsolata
 !URxvt*font            : xft:Inconsolata for Powerline:regular:size=12:antialias=true
 !URxvt*imFont          : xft:Inconsolata for Powerline:regular:size=12
 !URxvt*boldFont        : xft:Inconsolata for Powerline:bold:size=12
 !URxvt*italicFont      : xft:Inconsolata for Powerline:italic:size=12
 !URxvt*boldItalicFont  : xft:Inconsolata for Powerline:bold:italic:size=12
+!! .
 !! Anonymous Pro
 URxvt*font            : xft:Anonymous Pro for Powerline:regular:size=12:antialias=true
 URxvt*imFont          : xft:Anonymous Pro for Powerline:regular:size=12
 URxvt*boldFont        : xft:Anonymous Pro for Powerline:bold:size=12
 URxvt*italicFont      : xft:Anonymous Pro for Powerline:italic:size=12
 URxvt*boldItalicFont  : xft:Anonymous Pro for Powerline:bold:italic:size=12
+!! .
 URxvt*cursorBlink:	true
 URxvt*transparent:	true
 URxvt*allow_bold:	true

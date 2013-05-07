@@ -39,10 +39,6 @@ GIT_PS1_DESCRIBE_STYLE="branch"
 #        ;;
 #esac
 
-#export PATH="/usr/lib/cw:$PATH"
-#export CW_COLORIZE=purple:green
-#export NOCOLOR_PIPE=1
-
 ## Andorid kernel.
 export ARCH=arm
 #export CROSS_COMPILE=/home/edward/Work/Mike/ToolChain/arm-eabi-4.7/bin/arm-eabi-
@@ -136,6 +132,10 @@ export PATH=$PATH:/usr/local/cryptol-academic-1.8.19/bin
 
 # colorgcc package:
 export PATH="/usr/lib/colorgcc/bin:$PATH"
+#export PATH="/usr/lib/cw:$PATH"
+#export CW_COLORIZE=purple:green
+#export NOCOLOR_PIPE=1
+
 
 export HISTCONTROL=erasedups
 export HISTSIZE=500

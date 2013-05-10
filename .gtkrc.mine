@@ -9,7 +9,7 @@ gtk-xft-rgba = rgb
 gtk-icon-theme-name="Iris"
 #gtk-theme-name = "Murrine-Gray"
 
-gtk-font-name = "Inconsolata for Powerline"
+gtk-font-name = "Inconsolata for Powerline 10"
 style "user-font"
 {
           font_name = "Inconsolata for Powerline"

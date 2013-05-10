@@ -96,34 +96,28 @@ compress () {
 
 #Extract archive
 
-function extract() {
- local e=0 i c
- for i; do
-   if [ -f $i && -r $i ]; then
-       c=
-       case $i in
-         *.tar.bz2) c='tar xjf'    ;;
-         *.tar.gz)  c='tar xzf'    ;;
-         *.bz2)     c='bunzip2'    ;;
-         *.gz)      c='gunzip'     ;;
-         *.tar)     c='tar xf'     ;;
-         *.tbz2)    c='tar xjf'    ;;
-         *.tgz)     c='tar xzf'    ;;
-         *.7z)      c='7z x'       ;;
-         *.Z)       c='uncompress' ;;
-         *.exe)     c='cabextract' ;;
-         *.rar)     c='unrar x'    ;;
-         *.xz)      c='unxz'       ;;
-         *.zip)     c='unzip'      ;;
-         *)     echo "$0: cannot extract \`$i': Unrecognized file extension" >&2; e=1 ;;
-       esac
-       [ $c ] && command $c "$i"
-   else
-       echo "$0: cannot extract \`$i': File is unreadable" >&2; e=2
-   fi
- done
- return $e
+extract() {
+    if [ -f $1 ] ; then
+        case $1 in
+            *.tar.bz2)  tar xjf $1    ;;
+            *.tbz2)     tar xjf $1    ;;
+            *.tar.gz)   tar xzf $1    ;;
+            *.tgz)      tar xzf $1    ;;
+            *.bz2)      bunzip2 $1    ;;
+            *.rar)      unrar x $1    ;;
+            *.gz)       gunzip $1     ;;
+            *.tar)      tar xf $1     ;;
+            *.zip)      unzip $1      ;;
+            *.Z)        uncompress $1 ;;
+            *.7z)       7z x $1       ;;
+            *) echo -e ${YELLOW}"'$1' cannot be unpacked"${RESET} ;;
+        esac
+    else
+        echo -e ${YELLOW}"'$1' is an invalid file"${RESET}
+    fi
 }
+
+#Document viewer helper
 
 function docview () {
   if [ -f $1 ] ; then

@@ -158,7 +158,6 @@ function parse_git_branch {
 }
 
 # Shell env
-
 function env() {
 	exec /usr/bin/env "$@" | grep -v ^LESS_TERMCAP_
 } 
@@ -191,6 +190,7 @@ function ff() {
 	find . -iname '*'$1'*' ; 
 }
 
+# .
 function lls(){ 
 	ls -l "$@"| egrep "^d" ; ls -lXB "$@" 2>&-| egrep -v "^d|total "; 
 }
@@ -200,6 +200,7 @@ function batchexec(){
   find . -type f -iname '*.'${1}'' -exec ${@:2}  {} \; ;	
 }
 
+# .
 function zombies() {
   local ZOMBIES=$(ps hr -Nos | awk '$1=="Z" {print $1}' | wc -l)
   if [ ${ZOMBIES} -gt 0 ]; then
@@ -207,19 +208,23 @@ function zombies() {
   fi
 }
 
+# .
 function calc() {
 	echo "$*" | bc 
 }
 
+# .
 function cs() {
 	cd "$1"
 	ls
 }
 
+# .
 function psgrep() {
 	ps aux | grep "$1" | grep -v "grep"
 }
 
+# .
 function dirselect() {
 	local possibleDirs
 	declare -a possibleDirs=("${!1}")
@@ -246,6 +251,7 @@ function dirselect() {
 	fi
 }
 
+# .
 function ldir() {
 	if [ -z "$1" ]; then
 		return
@@ -282,11 +288,12 @@ function pastebin() {
 	echo
 }
 
-
+# .
 function copySshKey(){
 	cat ~/.ssh/id_rsa.pub | ssh $1 'cat >> .ssh/authorized_keys'
 }
 
+# .
 function extDisplay(){
 	if ! xrandr | grep VGA1 | grep disconnected  &gt;/dev/null ; then
 		xrandr --output LVDS1 --mode 1024x768 --output VGA1 --mode 1024x786 --above LVDS1
@@ -295,18 +302,45 @@ function extDisplay(){
 	fi
 	}
 
+# .
 function shrinkurl(){
 	curl https://www.googleapis.com/urlshortener/v1/url -H 'Content-Type: application/json' -d '{"longUrl": "${1}"}'
 }
 
+# .
 function clock(){
 	while true;do clear;echo "===========";date +"%r";echo "===========";sleep 1;done
 }
 
+# .
 function whatthecommit(){
 	curl -s http://whatthecommit.com/index.txt
 }
 
+# .
 psg() { 
 	ps auxw | grep -v "grep" | grep -E "(^USER.*COMMAND$|$@)"; 
+}
+
+#netinfo - shows network information for your system
+#FIXME: output of ifconfig has now changed.. awk needs adjusting..
+netinfo ()
+{
+    echo "--------------- Network Information ---------------"
+    /sbin/ifconfig | awk /'inet addr/ {print $2}'
+    /sbin/ifconfig | awk /'Bcast/ {print $3}'
+    /sbin/ifconfig | awk /'inet addr/ {print $4}'
+    /sbin/ifconfig | awk /'HWaddr/ {print $4,$5}'
+    myip=`lynx -dump -hiddenlinks=ignore -nolist http://checkip.dyndns.org:8245/ | sed '/^$/d; s/^[ ]*//g; s/[ ]*$//g' `
+    echo "${myip}"
+    echo "---------------------------------------------------"
+}
+
+#dirsize - finds directory sizes and lists them for the current directory
+dirsize () {
+    du -shx * .[a-zA-Z0-9_]* 2> /dev/null | \
+    egrep '^ *[0-9.]*[MG]' | sort -n > /tmp/list
+    egrep '^ *[0-9.]*M' /tmp/list
+    egrep '^ *[0-9.]*G' /tmp/list
+    rm -f /tmp/list
 }

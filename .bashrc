@@ -6,6 +6,7 @@
 [[ $- != *i* ]] && return
 
 [[ -f ~/.bash_alias ]] && source ~/.bash_alias
+[[ -f ~/.bash_functions ]] && source ~/.bash_functions
 
 if [ "$TERM" = "linux" ]; then
     _SEDCMD='s/.*\*color\([0-9]\{1,\}\).*#\([0-9a-fA-F]\{6\}\).*/\1 \2/p'
@@ -25,6 +26,22 @@ if [ -f /etc/bash_completion ]; then
     . /etc/bash_completion
 fi
 
+unset SSH_ASKPASS
+
+# bash options ------------------------------------
+shopt -s autocd             # change to named directory
+shopt -s cdable_vars        # if cd arg is not valid, assumes its a var defining a dir
+shopt -s cdspell            # autocorrects cd misspellings
+shopt -s checkwinsize       # update the value of LINES and COLUMNS after each command if altered
+shopt -s cmdhist            # save multi-line commands in history as single line
+shopt -s dotglob            # include dotfiles in pathname expansion
+shopt -s expand_aliases     # expand aliases
+shopt -s extglob            # enable extended pattern-matching features
+shopt -s histappend         # append to (not overwrite) the history file
+shopt -s hostcomplete       # attempt hostname expansion when @ is at the beginning of a word
+shopt -s nocaseglob         # pathname expansion will be treated as case-insensitive
+shopt -s checkjobs          # bash lists the status of any stopped and running jobs before exiting an interactive shell.
+
 # Git PS1 Prompt
 source ~/.git-prompt.sh
 GIT_PS1_SHOWDIRTYSTATE=true
@@ -42,7 +59,8 @@ GIT_PS1_DESCRIBE_STYLE="branch"
 ## Andorid kernel.
 export ARCH=arm
 #export CROSS_COMPILE=/home/edward/Work/Mike/ToolChain/arm-eabi-4.7/bin/arm-eabi-
-export CROSS_COMPILE=/usr/bin/arm-none-eabi-
+export CROSS_COMPILE=/home/edward/Work/Mike/ToolChain/arm-2011.09/bin/arm-none-linux-gnueabi-
+#export CROSS_COMPILE=/usr/bin/arm-none-eabi-
 
 # Reset
 Color_Off='\e[0m'       # Text Reset
@@ -126,6 +144,7 @@ export PAGER=/usr/bin/vimpager
 export SDCV_PAGER=$PAGER
 alias less=$PAGER
 alias zless=$PAGER
+export GREP_COLOR="01;33"
 
 export PATH=$PATH:~/.cabal/bin:/usr/local/android-sdk-linux/platform-tools
 export PATH=$PATH:/usr/local/cryptol-academic-1.8.19/bin
@@ -151,125 +170,3 @@ export HISTIGNORE=ls:'ls -l':fg
 PS1='\[\e[0;37m\]┌─[$(battery_status)\[\e[0;37m\]]\j[$(user_color)\u\[\e[0;37m\]][\[\e[0;96m\]\h\[\e[0;37m\]][\[\e[0;32m\]\w\[\e[0;37m\]][\[\e[03;35m\]\W$(__git_ps1 " (%s)")\[\e[0;37m\]] \n\[\e[0;37m\]└──╼ \[\e[0m\]'
 PS2="╾──╼"
 
-
-#Functions
-
-user_color () {
-
-if [ `id -u` -eq "0" ]; then
-	root="${BRed}"
-else
-	root="${BPurple}"
-fi
-
-echo -e "${root}"
-}
-
-#Check battery levels
-battery_status()
-{
-#BATTERY=/proc/acpi/battery/BAT0
-BATTERY=/sys/class/power_supply/BAT0
-
-#REM_CAP=`grep "^remaining capacity" $BATTERY/state | awk '{ print $3 }'`
-#FULL_CAP=`grep "^last full capacity" $BATTERY/info | awk '{ print $4 }'`
-#BATSTATE=`grep "^charging state" $BATTERY/state | awk '{ print $3 }'`
-
-REM_CAP=`cat $BATTERY/energy_now`
-FULL_CAP=`cat $BATTERY/energy_full`
-BATSTATE=`cat $BATTERY/status`
-
-CHARGE=`echo $(( $REM_CAP * 100 / $FULL_CAP ))`
-
-NON='\e[00m'
-BLD='\e[01m'
-BLKRed='\e[05;91m'
-
-COLOUR="$BLD$BLKRed"
-WARNING=""
-
-case "${BATSTATE}" in
-   'Charged')
-   BATSTT="$BLD=$NON"
-   ;;
-   'Charging')
-   BATSTT="$BLD+$NON"
-   ;;
-   'Discharging')
-   BATSTT="$BLD-$NON"
-   ;;
-esac
-
-# prevent a charge of more than 100% displaying
-if [ "$CHARGE" -gt "99" ]
-then
-   CHARGE=100
-fi
-
-if [ "$CHARGE" -lt "5" ]
-then
-	WARNING="${BLKRed}( BATTERY WARNING! ) "
-fi
-
-if [ "$CHARGE" -gt "15" ]
-then
-   COLOUR="$Yellow"
-fi
-
-if [ "$CHARGE" -gt "30" ]
-then
-   COLOUR="$Green"
-fi
-
-echo -e "${WARNING}${BATSTT}${COLOUR}${CHARGE}%${NON}"
-}
-
-#Create archive
-
-compress () {
-    if [ -n "$1" ] ; then
-        FILE=$1
-        case $FILE in
-        *.tar)      shift && tar cf $FILE $* ;;
-        *.tar.bz2)  shift && tar cjf $FILE $* ;;
-        *.tar.gz)   shift && tar czf $FILE $* ;;
-        *.tgz)      shift && tar czf $FILE $* ;;
-        *.zip)      shift && zip $FILE $* ;;
-        *.rar)      shift && rar $FILE $* ;;
-        esac
-    else
-        echo "usage: compress <archive.tar.gz> <archive> <files>"
-    fi
-}
-
-#Unpack archive
-
-unpack() {
-    if [ -f $1 ] ; then
-        case $1 in
-            *.tar.bz2)  tar xjf $1    ;;
-            *.tbz2)     tar xjf $1    ;;
-            *.tar.gz)   tar xzf $1    ;;
-            *.tgz)      tar xzf $1    ;;
-            *.bz2)      bunzip2 $1    ;;
-            *.rar)      unrar x $1    ;;
-            *.gz)       gunzip $1     ;;
-            *.tar)      tar xf $1     ;;
-            *.zip)      unzip $1      ;;
-            *.Z)        uncompress $1 ;;
-            *.7z)       7z x $1       ;;
-            *) echo -e ${YELLOW}"'$1' cannot be unpacked"${RESET} ;;
-        esac
-    else
-        echo -e ${YELLOW}"'$1' is an invalid file"${RESET}
-    fi
-}
-
-
-#Generate random password
-
-genpasswd() {
-        local l=$1
-        [ "$l" == "" ] && l=16
-        tr -dc A-Za-z0-9_ < /dev/urandom | head -c ${l} | xargs
-}

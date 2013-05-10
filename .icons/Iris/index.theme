@@ -1,0 +1,34 @@
+[Icon Theme]
+Name=Iris
+Comment=Based on the SGI IMD
+Directories=scalable/devices,scalable/emblems,scalable/filesystems,scalable/mimetypes,scalable/apps,36x36/apps
+
+[scalable/apps]
+Size=48
+Context=Apps
+Type=Scaled
+
+[scalable/devices]
+Size=48
+Context=Devices
+Type=Scaled
+
+[scalable/emblems]
+Size=48
+Context=Emblems
+Type=Scaled
+
+[scalable/filesystems]
+Size=48
+Context=FileSystems
+Type=Scaled
+
+[scalable/mimetypes]
+Size=48
+Context=MimeTypes
+Type=Scaled
+
+[36x36/apps]
+Size=36
+Context=Apps
+Type=Threshold

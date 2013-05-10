@@ -1,0 +1,25 @@
+gtk-menu-popup-delay = 0
+gtk-menu-images = 0
+gtk-toolbar-style = GTK_TOOLBAR_ICONS
+
+gtk-xft-hinting = 1
+gtk-xft-hintstyle = hintfull
+gtk-xft-rgba = rgb
+
+gtk-icon-theme-name="Iris"
+#gtk-theme-name = "Murrine-Gray"
+
+gtk-font-name = "Inconsolata for Powerline"
+style "user-font"
+{
+          font_name = "Inconsolata for Powerline"
+}
+widget_class "*" style "user-font"
+
+# When using a tiling window manager, vim will have dead area at it's borders,
+# where it can't fit an entire line/column. The default color of this dead area
+# is usually an ugly grey. Setting it to black looks much better.
+style "dark-vim" {
+  bg[NORMAL] = "#000000"
+}
+widget "vim-main-window.*GtkForm" style "dark-vim"

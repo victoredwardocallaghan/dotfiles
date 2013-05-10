@@ -61,6 +61,9 @@ setxkbmap -option 'lv3:ralt_switch'
 # Work around Gtk not taking unicode from the keyboard.
 export GTK_IM_MODULE=xim
 
+# Fast startup
+thunar --daemon &
+
 # setup media key binding
 xbindkeys &
 

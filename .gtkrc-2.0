@@ -1,5 +1,5 @@
 #gtk-theme-name = "Murrine-Gray"
 
-include "/home/edward/.themes/FLYNN_UI/gtk-2.0/gtkrc"
+include "/home/edward/.themes/FlatStudio/gtk-2.0/gtkrc"
 
 include "/home/edward/.gtkrc.mine"

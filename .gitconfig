@@ -84,7 +84,7 @@
   main-window-maximized = false
 
 [credential]
-  helper = cache --timeout 3600
+	helper = cache --timeout 3600
 
 [push]
 	default = simple

@@ -650,6 +650,7 @@ xmlrpc-c
 xmobar
 xmonad
 xmonad-contrib
+xorg-xprop
 xorg-xclipboard
 xorg-appres
 xorg-bdftopcf

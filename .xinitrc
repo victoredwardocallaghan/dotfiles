@@ -35,15 +35,15 @@ fi
 ## $ systemctl --user enable mpd
 ## $ systemctl --user start mpd
 #run systemd as user instance
-systemd --user &
+/usr/lib/systemd/systemd --user &
 
 
 # Setup fast terminal lunch
-urxvtd -q -f -o
+/usr/bin/urxvtd -q -f -o
 
 
 # Fast startup
-thunar --daemon &
+/usr/bin/thunar --daemon &
 
 
 # Executed by startx (run your window manager from here)

@@ -650,6 +650,9 @@ xmlrpc-c
 xmobar
 xmonad
 xmonad-contrib
+xcompmgr
+hsetroot
+unclutter
 xorg-xprop
 xorg-xclipboard
 xorg-appres

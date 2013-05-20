@@ -1,0 +1,64 @@
+#!/usr/bin/env bash
+#
+# ~/.xprofile
+#
+
+
+# Load default .Xresources
+[[ -f ~/.Xresources ]] && xrdb -all -load ~/.Xresources
+
+
+# Hide mouse cursor when idle.
+unclutter -idle 5 -noevents &
+
+
+# Setup screen locking
+xscreensaver -no-splash &
+
+
+# Screen power save tweaks
+xset +dpms
+xset dpms 0 0 300
+
+
+# Human eyes saving tweaks
+redshift &
+
+
+# Mouse speed tweaks
+xset mouse 7 1
+
+
+# Setup X Compose for entering Unicode characters
+# e.g., “Compose+'+a*” for ‘α’.
+# Ensure no options are currently set and change layout variant for more unicode's
+setxkbmap -option
+setxkbmap -variant altgr-intl
+# setxkbmap -option 'compose:caps'
+setxkbmap -option 'compose:rctrl'
+# This remaps Alt_R to AltGr, granting access to ¬ (AltGr+\) for making ¬_¬ smileys
+# and giving me simpler key combos for commonly-used glyphs like µ (AltGr+m) and © (AltGr+c).
+setxkbmap -option 'lv3:ralt_switch'
+
+
+## !! NOTE WELL !!: Setup thinkpad keyboard layout for T series
+# Find current by: setxkbmap -query
+# setxkbmap us
+#setxkbmap -model thinkpad60
+
+
+# Work around Gtk not taking unicode from the keyboard.
+export GTK_IM_MODULE=xim
+
+
+# Transparent window support
+#hsetroot -solid "#242424"
+#xcompmgr -sFfC -r 0 -D 2 &
+
+
+# Set wallpaper
+#feh --bg-scale ~/.config/wallpapers/sailing-wave-collision_00151716.jpg
+
+
+# Setup media key binding
+xbindkeys &

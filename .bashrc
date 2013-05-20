@@ -155,11 +155,17 @@ export PATH="/usr/lib/colorgcc/bin:$PATH"
 #export CW_COLORIZE=purple:green
 #export NOCOLOR_PIPE=1
 
+# Gtk-2.0 theme
+export GTK2_RC_FILES="$HOME/.gtkrc-2.0"
 
+#---------------------------------------
+# History stuff
+#---------------------------------------
 export HISTCONTROL=erasedups
 export HISTSIZE=500
 export HISTIGNORE=ls:'ls -l':fg
-
+shopt -s histappend
+export PROMPT_COMMAND="history -a; history -n"
 
 #PS1="\[\e[01;31m\]┌─[\[\e[01;35m\u\e[01;31m\]]──[\[\e[00;37m\]${HOSTNAME%%.*}\[\e[01;32m\]]:\w$\[\e[01;31m\]\n\[\e[01;31m\]└──\[\e[01;36m\]>>\[\e[0m\]"
 

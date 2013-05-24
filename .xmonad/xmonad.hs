@@ -123,6 +123,7 @@ myPDFReader = "mupdf"
 myBrowser = "/usr/bin/dwb"
 myMail = "/usr/bin/urxvt -name Mail -e mutt"
 myChat = "/usr/bin/urxvt -name Chat -e irssi"
+myNews = "/usr/bin/urxvt -name News -e snownews"
 myTorrent = "/usr/bin/urxvt -name Downloads -e rtorrent"
 myMedia = "/usr/bin/urxvt -name Media -e ncmpcpp -s media-library"
 --myEditor = "/usr/bin/urxvt -e rvim"
@@ -185,6 +186,7 @@ myFloatHook = composeAll
     , className =? "Thunar"                --> moveToFiles
     , className =? "Vlc"                   --> moveToMedia
     , appName   =? "Downloads"             --> moveToFiles
+    , appName   =? "News"                  --> moveToMail
     , appName   =? "Mail"                  --> moveToMail
     , appName   =? "Media"                 --> moveToMedia
     , appName   =? "Chat"                  --> moveToIM
@@ -505,6 +507,10 @@ myKeys conf@(XConfig {XMonad.modMask = modMask}) = M.fromList $
   -- Start email client.
   , ((modMask .|. controlMask, xK_z),
      spawn myMail)
+
+  -- Start rss news feed client.
+  , ((modMask .|. controlMask, xK_r),
+     spawn myNews)
 
   -- Start torrent client.
   , ((modMask .|. controlMask, xK_t),

@@ -388,14 +388,14 @@ myBorderWidth = 1
 -- Configuration for Prompt
 --
 myXPConfig :: XPConfig
-myXPConfig = defaultXPConfig { font              = myFont ++ ":size=11"
+myXPConfig = defaultXPConfig { font               = myFont ++ ":size=11"
                               , bgColor           = "orange"
                               , fgColor           = "black"
                               , fgHLight          = "black"
                               , bgHLight          = "darkslategray4"
                               , borderColor       = "black"
                               , promptBorderWidth = 1
-                              , position          = Top
+                              , position          = Bottom
                               , height            = 20
                               , defaultText       = []
                               }

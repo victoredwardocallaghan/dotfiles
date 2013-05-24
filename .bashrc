@@ -173,6 +173,6 @@ export PROMPT_COMMAND="history -a; history -n"
 #trap 'echo -ne "\e[0m"' DEBUG
 #set -x
 
-PS1='\[\e[0;37m\]┌─[$(battery_status)\[\e[0;37m\]]\j[$(user_color)\u\[\e[0;37m\]][\[\e[0;96m\]\h\[\e[0;37m\]][\[\e[0;32m\]\w\[\e[0;37m\]][\[\e[03;35m\]\W$(__git_ps1 " (%s)")\[\e[0;37m\]] \n\[\e[0;37m\]└──╼ \[\e[0m\]'
+PS1='\[\e[0;37m\]┌─[β$(battery_status)\[\e[0;37m\]]\j[$(user_color)\u\[\e[0;37m\]][\[\e[0;96m\]\h\[\e[0;37m\]][\[\e[0;32m\]\w\[\e[0;37m\]][\[\e[03;35m\]\W$(__git_ps1 " (%s)")\[\e[0;37m\]] \n\[\e[0;37m\]└──╼ \[\e[0m\]'
 PS2="╾──╼"
 

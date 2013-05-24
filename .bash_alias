@@ -2,6 +2,11 @@ alias down='aria2c --conf-path=${HOME}/.aria2/aria2.conf'
 alias rapid='aria2c --conf-path=${HOME}/.aria2/aria2.rapidshare'
 alias torrent='aria2c --conf-path=${HOME}/.aria2/aria2.torrent'
 
+# totally useless fun.
+alias rmatrix='echo -ne "\e[31m" ; while true ; do echo -ne "\e[$(($RANDOM % 2 + 1))m" ; tr -c "[:print:]" " " < /dev/urandom | dd count=1 bs=50 2> /dev/null ; done'
+alias gmatrix='echo -ne "\e[32m" ; while true ; do echo -ne "\e[$(($RANDOM % 2 + 1))m" ; tr -c "[:print:]" " " < /dev/urandom | dd count=1 bs=50 2> /dev/null ; done'
+
+# .
 alias ..='cd ..'
 alias ...='cd ../..'
 alias ....='cd ../../..'

@@ -8,9 +8,9 @@
 user_color () {
 
 if [ `id -u` -eq "0" ]; then
-	root="${BRed}"
+   root="${BRed}"
 else
-	root="${BPurple}"
+   root="${BPurple}"
 fi
 
 echo -e "${root}"
@@ -59,7 +59,7 @@ fi
 
 if [ "$CHARGE" -lt "5" ]
 then
-	WARNING="${BLKRed}( BATTERY WARNING! ) "
+   WARNING="${BLKRed}( BATTERY WARNING! ) "
 fi
 
 if [ "$CHARGE" -gt "15" ]
@@ -159,8 +159,8 @@ function parse_git_branch {
 
 # Shell env
 function env() {
-	exec /usr/bin/env "$@" | grep -v ^LESS_TERMCAP_
-} 
+   exec /usr/bin/env "$@" | grep -v ^LESS_TERMCAP_
+}
 
 # Fetch current song on last.fm
 function lastfm_np(){
@@ -186,13 +186,13 @@ function fstr(){
 }
 
 # find a file
-function ff() { 
-	find . -iname '*'$1'*' ; 
+function ff() {
+   find . -iname '*'$1'*' ;
 }
 
 # .
-function lls(){ 
-	ls -l "$@"| egrep "^d" ; ls -lXB "$@" 2>&-| egrep -v "^d|total "; 
+function lls(){
+   ls -l "$@"| egrep "^d" ; ls -lXB "$@" 2>&-| egrep -v "^d|total ";
 }
 
 # batchexec
@@ -210,18 +210,18 @@ function zombies() {
 
 # .
 function calc() {
-	echo "$*" | bc 
+   echo "$*" | bc
 }
 
 # .
 function cs() {
-	cd "$1"
-	ls
+   cd "$1"
+   ls
 }
 
 # .
 function psgrep() {
-	ps aux | grep "$1" | grep -v "grep"
+   ps aux | grep "$1" | grep -v "grep"
 }
 
 # .
@@ -284,13 +284,8 @@ function jbm() {
 
 # http://pastebin.com/api.php
 function pastebin() {
-	curl -s --data-urlencode paste_code@- -d paste_name="$USER" -d paste_expire_date=N http://pastebin.com/api_public.php|tail -n 1
-	echo
-}
-
-# .
-function copySshKey(){
-	cat ~/.ssh/id_rsa.pub | ssh $1 'cat >> .ssh/authorized_keys'
+   curl -s --data-urlencode paste_code@- -d paste_name="$USER" -d paste_expire_date=N http://pastebin.com/api_public.php|tail -n 1
+   echo
 }
 
 # .
@@ -304,22 +299,22 @@ function extDisplay(){
 
 # .
 function shrinkurl(){
-	curl https://www.googleapis.com/urlshortener/v1/url -H 'Content-Type: application/json' -d '{"longUrl": "${1}"}'
+   curl https://www.googleapis.com/urlshortener/v1/url -H 'Content-Type: application/json' -d '{"longUrl": "${1}"}'
 }
 
 # .
 function clock(){
-	while true;do clear;echo "===========";date +"%r";echo "===========";sleep 1;done
+   while true;do clear;echo "===========";date +"%r";echo "===========";sleep 1;done
 }
 
 # .
 function whatthecommit(){
-	curl -s http://whatthecommit.com/index.txt
+   curl -s http://whatthecommit.com/index.txt
 }
 
 # .
-psg() { 
-	ps auxw | grep -v "grep" | grep -E "(^USER.*COMMAND$|$@)"; 
+psg() {
+   ps auxw | grep -v "grep" | grep -E "(^USER.*COMMAND$|$@)";
 }
 
 #netinfo - shows network information for your system

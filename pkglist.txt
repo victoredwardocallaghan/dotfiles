@@ -19,6 +19,7 @@ abs
 base-devel
 distcc
 perl-net-smtp-ssl
+perl-text-aspell
 perl-authen-sasl
 perl-mime-base64
 colorgcc
@@ -653,6 +654,7 @@ xmonad-contrib
 xcompmgr
 hsetroot
 unclutter
+figlet
 xorg-xprop
 xorg-xclipboard
 xorg-appres

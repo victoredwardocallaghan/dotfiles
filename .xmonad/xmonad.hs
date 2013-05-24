@@ -124,7 +124,7 @@ myBrowser = "/usr/bin/dwb"
 myMail = "/usr/bin/urxvt -e mutt"
 myChat = "/usr/bin/urxvt -e irssi"
 myTorrent = "/usr/bin/urxvt -e rtorrent"
-myMedia = "/usr/bin/urxvt -e ncmpcpp -s media-library"
+myMedia = "/usr/bin/urxvt -name ncmpcpp -e ncmpcpp -s media-library"
 --myEditor = "/usr/bin/urxvt -e rvim"
 myEditor = "/usr/bin/gvim "
 myScreenLock = "/usr/bin/xscreensaver-command -lock"
@@ -184,6 +184,7 @@ myFloatHook = composeAll
     , className =? "Thunar"                --> moveToFiles
     , className =? "mutt"                  --> moveToMail
     , className =? "Vlc"                   --> moveToMedia
+    , className =? "ncmpcpp"               --> moveToMedia
     , appName   =? "ncmpcpp"               --> moveToMedia
     , className =? "Pidgin"                --> moveToIM
     , classNotRole ("Pidgin", "")          --> doFloat
@@ -752,7 +753,7 @@ myStartupHook = do
 --
 main = do
   --xmproc <- spawnPipe "/usr/bin/xmobar ~/.xmonad/xmobarrc"
-  xmproc <- spawnPipe "/home/edward/Current_Work/Haskell/xmobarworking/xmobar/dist/build/xmobar/xmobar ~/.xmobarrc"
+  xmproc <- spawnPipe "/usr/bin/xmobar"
   xmonad $ withUrgencyHook NoUrgencyHook $ defaults xmproc
 
 

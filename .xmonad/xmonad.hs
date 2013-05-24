@@ -121,10 +121,10 @@ import XMonad.Layout.WindowNavigation
 myFileManager = "thunar"
 myPDFReader = "mupdf"
 myBrowser = "/usr/bin/dwb"
-myMail = "/usr/bin/urxvt -e mutt"
-myChat = "/usr/bin/urxvt -e irssi"
-myTorrent = "/usr/bin/urxvt -e rtorrent"
-myMedia = "/usr/bin/urxvt -name ncmpcpp -e ncmpcpp -s media-library"
+myMail = "/usr/bin/urxvt -name Mail -e mutt"
+myChat = "/usr/bin/urxvt -name Chat -e irssi"
+myTorrent = "/usr/bin/urxvt -name Downloads -e rtorrent"
+myMedia = "/usr/bin/urxvt -name Media -e ncmpcpp -s media-library"
 --myEditor = "/usr/bin/urxvt -e rvim"
 myEditor = "/usr/bin/gvim "
 myScreenLock = "/usr/bin/xscreensaver-command -lock"
@@ -179,13 +179,15 @@ myFloatHook = composeAll
     , className =? "Xzgv"                  --> doFloat
     , className =? "Firefox"               --> moveToWeb
     , className =? "Chromium"              --> moveToWeb
+    , className =? "Steam"                 --> moveToMisc
     , className =? "Gvim"                  --> moveToCode
     , className =? "Apvlv"                 --> moveToDocum
     , className =? "Thunar"                --> moveToFiles
-    , className =? "mutt"                  --> moveToMail
     , className =? "Vlc"                   --> moveToMedia
-    , className =? "ncmpcpp"               --> moveToMedia
-    , appName   =? "ncmpcpp"               --> moveToMedia
+    , appName   =? "Downloads"             --> moveToFiles
+    , appName   =? "Mail"                  --> moveToMail
+    , appName   =? "Media"                 --> moveToMedia
+    , appName   =? "Chat"                  --> moveToIM
     , className =? "Pidgin"                --> moveToIM
     , classNotRole ("Pidgin", "")          --> doFloat
     , className =? "Skype"                 --> moveToIM
@@ -201,6 +203,7 @@ myFloatHook = composeAll
     moveToMedia = doF $ W.shift "ε:media"
     moveToDocum = doF $ W.shift "ζ:documents"
     moveToFiles = doF $ W.shift "η:files"
+    moveToMisc  = doF $ W.shift "θ"
 
     classNotRole :: (String, String) -> Query Bool
     classNotRole (c,r) = className =? c <&&> role /=? r
@@ -504,7 +507,7 @@ myKeys conf@(XConfig {XMonad.modMask = modMask}) = M.fromList $
      spawn myMail)
 
   -- Start torrent client.
-  , ((modMask .|. controlMask, xK_d),
+  , ((modMask .|. controlMask, xK_t),
      spawn myTorrent)
 
   -- Start media library.

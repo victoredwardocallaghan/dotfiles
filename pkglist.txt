@@ -1,3 +1,5 @@
+snownews
+hexedit
 swig
 cmake
 mc

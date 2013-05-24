@@ -7,22 +7,22 @@ Xcursor.theme: Vanilla-DMZ
 !-[Font Rendering]-----
 Xft.dpi:        96
 Xft.antialias:  true
-Xft.rgba:       rgb
 Xft.hinting:    true
-!Xft*hinting:	full
+Xft.autohint:   false
+Xft.rgba:       rgb
 Xft.hintstyle:  hintslight
-Xft.lcdfilter:  lcdslight
+Xft.lcdfilter:  lcddefault
 
 !-[URxvt Settings]-----
 URxvt*termName: rxvt-unicode-256color
-URxvt*.dpi:	96
+URxvt*.dpi:   96
 URxvt*.depth: 32
-URxvt*tint:	#000000
+URxvt*tint:   #000000
 !URxvt*foreground:	grey
 !!urxvt*foreground:	#7f8f9f
 !!urxvt*background:	#0c0d0e
 URxvt.background: [95]#242424
-URxvt*saveLines:	1000
+URxvt*saveLines:  1000
 !URxvt.font:	xft:DejaVu Sans Mono:antialias=true:pixelsize=13
 !URxvt.font: xft:Inconsolata:antialias=true:hinting=true
 !!  Inconsolata
@@ -39,15 +39,15 @@ URxvt*boldFont        : xft:Anonymous Pro for Powerline:bold:size=12
 URxvt*italicFont      : xft:Anonymous Pro for Powerline:italic:size=12
 URxvt*boldItalicFont  : xft:Anonymous Pro for Powerline:bold:italic:size=12
 !! .
-URxvt*cursorBlink:	true
-URxvt*transparent:	true
-URxvt*allow_bold:	true
+URxvt*cursorBlink:  true
+URxvt*transparent:  true
+URxvt*allow_bold:   true
 !URxvt*shading:	20
-URxvt.loginShell: true
-URxvt*scrollBar:	false
-URxvt*colorUL:	#7FB0F1
-URxvt*.underlineColor:   yellow
-URxvt*.urgentOnBell: true
+URxvt.loginShell:   true
+URxvt*scrollBar:    false
+URxvt*colorUL:      #7FB0F1
+URxvt*.underlineColor: yellow
+URxvt*.urgentOnBell:   true
 
 !!-[URxvt per-line display filtering]--
 URxvt.perl-ext:      default,matcher

@@ -50,15 +50,11 @@ URxvt*.underlineColor: yellow
 URxvt*.urgentOnBell: true
 URxvt*buffered:      false
 
-!! Ctrl-Shift key insert mode for keycap is annoying,
-URxvt.iso14755: off
-URxvt.iso14755_52: off
-
 !!-[URxvt per-line display filtering]--
 URxvt.perl-ext:      default,matcher
 ! tabbedex is not provided by default
 ! put it in ~/.urxvt/
-URxvt.perl-lib: .urxvt/
+URxvt.perl-lib: .urxvt/ext/
 !,digital-clock
 !,selection-pastebin
 URxvt.urlLauncher: /usr/bin/dwb
@@ -72,15 +68,28 @@ URxvt.matcher.launcher.2: rvim +$2 $1
 !URxvt.selection-pastebin.cmd: rsync -apP % ruth:/var/www/www.ta-sa.org/files/txt/.
 !URxvt.keysym.C-M-e: perl:selection-pastebin:remote-pastebin
 
-URxvt.perl-ext-common: default,selection-autotransform,tabbed,keyboard-select,url-select,clipboard
+URxvt.perl-ext-common: default,selection-autotransform,tabbed,keyboard-select,url-select,clipboard,font-size
 
 URxvt.selection-autotransform.0: s/^([^:[:space:]]+):(\\d+):?$/vim +$2 \\Q$1\\E\\x0d/
+
+!!--[URxvt font size, Alt-Control Up and Down to increase and decrease font size]---
+URxvt.font-size.step:  4
+URxvt.keysym.C-Up:     perl:font-size:increase
+URxvt.keysym.C-Down:   perl:font-size:decrease
+URxvt.keysym.C-S-Up:   perl:font-size:incglobal
+URxvt.keysym.C-S-Down: perl:font-size:decglobal
+
+!! Ctrl-Shift key insert mode for keycap is annoying, breaks font size bindings also..
+URxvt.iso14755:    false
+URxvt.iso14755_52: false
+
 
 !!--[URxvt tab support, Shift-Left Right and Down creates new tabs]---
 URxvt.tabbed.tabbar-fg: 10
 URxvt.tabbed.tabbar-bg: #000000
 URxvt.tabbed.tab-fg:    4
 URxvt.tabbed.tab-bg:    #000000
+
 
 !!-[URxvt-perls = keyboard-select]---
 URxvt.keysym.M-Escape:  perl:keyboard-select:activate
@@ -91,9 +100,9 @@ URxvt.keysym.M-s:       perl:keyboard-select:search
 URxvt.clipboard.copycmd:  xclip -i -selection clipboard
 URxvt.clipboard.pastecmd: xclip -o -selection clipboard
 
-URxvt.keysym.M-c:	perl:clipboard:copy
-URxvt.keysym.M-v:	perl:clipboard:paste
-URxvt.keysym.M-C-v:	perl:clipboard:paste_escaped
+URxvt.keysym.M-c:   perl:clipboard:copy
+URxvt.keysym.M-v:   perl:clipboard:paste
+URxvt.keysym.M-C-v: perl:clipboard:paste_escaped
 
 
 !!-[URxvt-perls = url-select]---

@@ -752,10 +752,8 @@ myMouseBindings (XConfig {XMonad.modMask = modMask}) = M.fromList $
 -- with mod-q.  Used by, e.g., XMonad.Layout.PerWorkspace to initialize
 -- per-workspace layout choices.
 --
--- By default, start XMonad as "LG3D" so Java works :/
-myStartupHook = do
-  setWMName "LG3D"
-  ewmhDesktopsStartup
+-- Start XMonad as "LG3D" so Java works with "non-repainting" WM :/
+myStartupHook = ewmhDesktopsStartup >> setWMName "LG3D"
 
 ------------------------------------------------------------------------
 -- Run xmonad with all the defaults we set up.

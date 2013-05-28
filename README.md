@@ -1,4 +1,5 @@
 dotfiles
+
 ========
 
 My config files.
@@ -28,4 +29,4 @@ Requirements;
 
  FIXME:
  Automate this in plugin: cd .vim/bundle/vimproc && make -f make_unix.mak
-
+ ==> Run 'pkgfile --update' to initialize the database

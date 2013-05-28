@@ -1,5 +1,8 @@
 snownews
 hexedit
+task-git
+vit
+pkgfile
 swig
 cmake
 mc
@@ -402,7 +405,6 @@ linux-firmware
 linux-headers
 llvm
 logrotate
-ls++-git
 lsb-release
 lshw
 lsof

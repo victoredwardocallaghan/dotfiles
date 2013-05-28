@@ -47,14 +47,22 @@ URxvt.loginShell:   true
 URxvt*scrollBar:    false
 URxvt*colorUL:      #7FB0F1
 URxvt*.underlineColor: yellow
-URxvt*.urgentOnBell:   true
+URxvt*.urgentOnBell: true
+URxvt*buffered:      false
+
+!! Ctrl-Shift key insert mode for keycap is annoying,
+URxvt.iso14755: off
+URxvt.iso14755_52: off
 
 !!-[URxvt per-line display filtering]--
 URxvt.perl-ext:      default,matcher
+! tabbedex is not provided by default
+! put it in ~/.urxvt/
+URxvt.perl-lib: .urxvt/
 !,digital-clock
 !,selection-pastebin
-URxvt.urlLauncher:	/usr/bin/dwb
-URxvt.keysym.C-Delete:	perl:matcher
+URxvt.urlLauncher: /usr/bin/dwb
+URxvt.keysym.C-Delete:  perl:matcher
 URxvt.matcher.button:   1
 URxvt.matcher.pattern.1:  \\bwww\\.[\\w-]+\\.[\\w./?&@#-]*[\\w/-]
 URxvt.matcher.pattern.2:  \\B(/\\S+?):(\\d+)(?=:|$)
@@ -64,19 +72,19 @@ URxvt.matcher.launcher.2: rvim +$2 $1
 !URxvt.selection-pastebin.cmd: rsync -apP % ruth:/var/www/www.ta-sa.org/files/txt/.
 !URxvt.keysym.C-M-e: perl:selection-pastebin:remote-pastebin
 
-URxvt.perl-ext-common:	default,selection-autotransform,tabbed,keyboard-select,url-select,clipboard
+URxvt.perl-ext-common: default,selection-autotransform,tabbed,keyboard-select,url-select,clipboard
 
 URxvt.selection-autotransform.0: s/^([^:[:space:]]+):(\\d+):?$/vim +$2 \\Q$1\\E\\x0d/
 
 !!--[URxvt tab support, Shift-Left Right and Down creates new tabs]---
-URxvt.tabbed.tabbar-fg:	10
-URxvt.tabbed.tabbar-bg:	#000000
-URxvt.tabbed.tab-fg:	4
-URxvt.tabbed.tab-bg:	#000000
+URxvt.tabbed.tabbar-fg: 10
+URxvt.tabbed.tabbar-bg: #000000
+URxvt.tabbed.tab-fg:    4
+URxvt.tabbed.tab-bg:    #000000
 
 !!-[URxvt-perls = keyboard-select]---
-URxvt.keysym.M-Escape:	perl:keyboard-select:activate
-URxvt.keysym.M-s:		perl:keyboard-select:search
+URxvt.keysym.M-Escape:  perl:keyboard-select:activate
+URxvt.keysym.M-s:       perl:keyboard-select:search
 
 
 !!-[URxvt-perls = clipboard]---
@@ -97,7 +105,7 @@ URxvt.keysym.M-u:    perl:url-select:select_next
 
 
 !-[colors]----
-URxvt*cursorColor:	#A7BF76
+URxvt*cursorColor:   #A7BF76
 URxvt*.colorIT:      #87af5f
 URxvt*.colorBD:      #d7d7d7
 URxvt*.colorUL:      #87afd7

@@ -7,6 +7,10 @@
 
 [[ -f ~/.bash_alias ]] && source ~/.bash_alias
 [[ -f ~/.bash_functions ]] && source ~/.bash_functions
+# "Command not found" hook
+# requires pkgfile
+source /usr/share/doc/pkgfile/command-not-found.bash
+
 
 if [ "$TERM" = "linux" ]; then
     _SEDCMD='s/.*\*color\([0-9]\{1,\}\).*#\([0-9a-fA-F]\{6\}\).*/\1 \2/p'
@@ -17,14 +21,19 @@ if [ "$TERM" = "linux" ]; then
     clear
 fi
 
-if [ -f ~/.dir_colors ]; then
-    eval `dircolors ~/.dir_colors`
+if [ -f ~/.dircolors ]; then
+   eval $(dircolors -b $HOME/.dircolors)
 fi
 
 # Bash Completion
 if [ -f /etc/bash_completion ]; then
     . /etc/bash_completion
 fi
+
+# Display error codes
+# To set trap to intercept the non-zero return code of last program.
+EC() { echo -e '\e[1;33m'code $?'\e[m\n'; }
+trap EC ERR
 
 unset SSH_ASKPASS
 
@@ -145,6 +154,7 @@ export SDCV_PAGER=$PAGER
 alias less=$PAGER
 alias zless=$PAGER
 export GREP_COLOR="01;33"
+export LESS="-RSM~gIsw"
 
 export PATH=$PATH:~/.cabal/bin:/usr/local/android-sdk-linux/platform-tools
 export PATH=$PATH:/usr/local/cryptol-academic-1.8.19/bin

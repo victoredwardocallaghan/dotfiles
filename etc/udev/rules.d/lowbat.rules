@@ -1,0 +1,2 @@
+## SLEEP IF BATTERY IS LOW
+SUBSYSTEM=="power_supply", ATTR{status}=="Discharging", ATTR{capacity}=="3", RUN+="/usr/bin/systemctl suspend"

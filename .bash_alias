@@ -24,7 +24,7 @@ alias music='ncmpcpp'
 # modified commands
 [ -x /usr/bin/colordiff ] && alias diff='colordiff'              # requires colordiff package
 [ -x /usr/bin/htop ] && alias top='htop'
-alias tree='tree -C'
+alias tree='tree -C | /usr/bin/less -r'
 alias wifi-menu='sudo wifi-menu'
 alias sdcv='sh ${HOME}/.scripts/sdcv.sh '
 
@@ -34,20 +34,20 @@ alias tlist='tmux list-sessions'
 alias tnew='tmux new -s'
 
 # some more ls aliases
-[ -x /usr/bin/vendor_perl/ls++ ] && alias ls='ls++'
-#alias ls='ls --color=auto -h'
-alias ll='ls -l'
-alias la='ls -A'
-alias l='ls -CF'
+#[ -x /usr/bin/vendor_perl/ls++ ] && alias ls='ls++'
+alias ls='ls -pshF --color'     # add colors for filetype recognition
+#
 alias la='ls -Al'               # show hidden files
-#alias ls='ls -hF --color'       # add colors for filetype recognition
 alias lx='ls -lXB'              # sort by extension
 alias lk='ls -lSr'              # sort by size
 alias lc='ls -lcr'              # sort by change time
 alias lu='ls -lur'              # sort by access time
 alias lr='ls -lR'               # recursive ls
 alias lt='ls -ltr'              # sort by date
-alias lm='ls -al |more'         # pipe through 'more'
+alias lm='ls -al | /usr/bin/less -r'         # pipe through 'less'
+#
+alias ll='ls -l'
+alias l='ls -CF'
 
 # privileged access
 

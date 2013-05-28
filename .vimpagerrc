@@ -2,8 +2,14 @@
 "
 " File: ~/.vimrc.local
 " Author: Edward O'Callaghan
-" Description::
+" Description: .
 " Last Modified: April 14, 2013"
 " ---------------------------------------------------------
 
 set noloadplugins
+
+if exists("vimpager")
+  if exists("vimpager_ptree") && vimpager_ptree[-2] == 'wman'
+    set ft=man
+  endif
+endif

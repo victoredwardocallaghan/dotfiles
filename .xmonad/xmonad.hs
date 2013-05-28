@@ -91,6 +91,7 @@ import XMonad.Layout.Fullscreen
 import XMonad.Layout.NoBorders
 import XMonad.Layout.Spiral
 import XMonad.Layout.IM
+import XMonad.Layout.SimplestFloat
 
 -- <layout helpers>
 import XMonad.Layout.Minimize
@@ -151,7 +152,7 @@ myTerminal = "/usr/bin/urxvtc"
 -- Workspaces
 -- The default number of workspaces (virtual screens) and their names.
 --
-myWorkspaces = ["α:web", "β:irc" ,"γ:code", "δ:mail", "ε:media", "ζ:documents", "η:files", "θ", "ι"]
+myWorkspaces = ["α:web", "β:irc" ,"γ:code", "δ:mail", "ε:media", "ζ:documents", "η:files", "θ", "ι", "λ"]
 
 
 ------------------------------------------------------------------------
@@ -176,7 +177,7 @@ myManageHook = scratchpadManageHookDefault <+> manageDocks
   where fullscreenManageHook = composeOne [ isFullscreen -?> doFullFloat ]
 
 myFloatHook = composeAll
-    [ className =? "XMathematica"          --> doFloat
+    [ appName   =? "XMathematica"          --> doFloat
     , className =? "Xzgv"                  --> doFloat
     , className =? "Firefox"               --> moveToWeb
     , className =? "Chromium"              --> moveToWeb
@@ -185,6 +186,7 @@ myFloatHook = composeAll
     , className =? "Apvlv"                 --> moveToDocum
     , className =? "Thunar"                --> moveToFiles
     , className =? "Vlc"                   --> moveToMedia
+    , appName   =? "XMathematica"          --> moveToMath
     , appName   =? "Downloads"             --> moveToFiles
     , appName   =? "News"                  --> moveToMail
     , appName   =? "Mail"                  --> moveToMail
@@ -206,6 +208,7 @@ myFloatHook = composeAll
     moveToDocum = doF $ W.shift "ζ:documents"
     moveToFiles = doF $ W.shift "η:files"
     moveToMisc  = doF $ W.shift "θ"
+    moveToMath  = doF $ W.shift "λ"
 
     classNotRole :: (String, String) -> Query Bool
     classNotRole (c,r) = className =? c <&&> role /=? r
@@ -269,6 +272,7 @@ myLayout = avoidStruts
              $ windowNavigation
              $ onWorkspace "β:irc" chatLayout
              $ onWorkspace "ζ:documents" docLayout
+             $ onWorkspace "λ" jreLayout
              collectiveLayouts
   where
      collectiveLayouts = tiled
@@ -300,6 +304,7 @@ myLayout = avoidStruts
      -- <layouts per workspace>
      chatLayout = withIM (1%7) (ClassName "Pidgin") Grid
      docLayout  = myTall ||| myFull
+     jreLayout  = simplestFloat ||| myFull
 
 -- Learn from this:..
 --myLayouts = avoidStruts $ windowNavigation  $

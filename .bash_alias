@@ -20,6 +20,7 @@ alias printers='lpstat -p -d'
 alias print='lp -o "sides=two-sided-long-edge prettyprint" '
 
 alias music='ncmpcpp'
+alias disks='lsblk -f'
 
 # modified commands
 [ -x /usr/bin/colordiff ] && alias diff='colordiff'              # requires colordiff package

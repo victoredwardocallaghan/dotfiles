@@ -18,7 +18,6 @@ Requirements;
  * xmonad - window manager
  * urxvt - terminal emulator
  * trayer - ensures space for status bar
- * ls++
  * colordiff
  * htop
  * tree

@@ -1,13 +1,2 @@
-# vim swap file
-.*.swp
-.netrwhist
-tags
-build
+cabal-dev
 dist
-*~
-*.bak*
-*.log
-*.bz2
-*.gz
-*.nbm
-*.local

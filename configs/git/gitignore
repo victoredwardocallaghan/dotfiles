@@ -1,0 +1,13 @@
+# vim swap file
+.*.swp
+.netrwhist
+tags
+build
+dist
+*~
+*.bak*
+*.log
+*.bz2
+*.gz
+*.nbm
+*.local

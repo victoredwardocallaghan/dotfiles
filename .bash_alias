@@ -28,6 +28,11 @@ alias tree='tree -C | /usr/bin/less -r'
 alias wifi-menu='sudo wifi-menu'
 alias sdcv='sh ${HOME}/.scripts/sdcv.sh '
 
+# Run Mathematica on Nvidia GPU for CUDA to function
+alias mathematica='primusrun mathematica'
+# Run Steam on Nvidia GPU
+alias steam='primusrun steam'
+
 # Tmux aliases
 alias tatt='tmux attach-session -t'
 alias tlist='tmux list-sessions'

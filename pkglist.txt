@@ -249,6 +249,8 @@ jansson
 jasper
 jbig2dec
 jfsutils
+gptfdisk
+bashmount
 js
 jshon
 json-c
@@ -646,6 +648,12 @@ xf86-video-modesetting
 xf86-video-vesa
 xf86dgaproto
 xf86vidmodeproto
+bumblebee
+nvidia
+lib32-nvidia-utils
+primus
+lib32-primus
+bbswitch
 xfburn
 xfconf
 xfsprogs

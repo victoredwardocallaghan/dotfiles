@@ -2,8 +2,6 @@
 Description=Copy EFISTUB Kernel to UEFISYS Partition
 
 [Path]
-PathChanged=/boot/vmlinuz-linux
-PathChanged=/boot/initramfs-linux.img
 PathChanged=/boot/initramfs-linux-fallback.img
 
 [Install]

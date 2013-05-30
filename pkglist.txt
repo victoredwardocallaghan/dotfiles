@@ -251,6 +251,10 @@ jbig2dec
 jfsutils
 gptfdisk
 bashmount
+zathura
+zathura-djvu
+zathura-ps
+zathura-pdf-poppler
 js
 jshon
 json-c

@@ -1,0 +1,93 @@
+
+$if(template.git.set_user)$
+[user]
+    name = $template.git.user_name$
+    email = $template.git.user_email$
+$endif$
+;   signingkey = 
+
+[github]
+    user = victoredwardocallaghan
+
+[sendemail]
+    smtpencryption = tls
+    smtpserver = smtp.gmail.com
+    smtpuser = victoredwardocallaghan@gmail.com
+    smtpserverport = 587
+
+
+[core]
+    excludesfile = ~/.gitignore
+    pager = less -R
+    editor = vim
+    excludesfile = ~/.gitignore
+
+[alias]
+    lol = log --graph --decorate --pretty=oneline --abbrev-commit
+    lola = log --graph --decorate --pretty=oneline --abbrev-commit --all
+    graph = log --graph --oneline --decorate
+    unstage = reset HEAD
+    last = cat-file commit HEAD
+    ba = branch -a
+    ci = commit -v
+    co = checkout
+    dl = log -p --stat
+    sl = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)%an <%ae>%Creset' --abbrev-commit --date=relative
+    up = svn rebase
+    k = !sh -c '(git diff $@|kompare - &) &> /dev/null' -
+    s = status
+    b = branch
+    ls-ignored = ls-files --others -i --exclude-standard --directory
+    rm-deleted = !git diff --name-only --diff-filter=D -z | xargs -0 git rm --cached
+    difflastpull = diff @{1}
+    lg = "log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --"
+
+    me = log --tags --source --oneline --author=victoredwardocallaghan@gmail.com
+
+    su = submodule foreach 'git pull origin master'
+
+[color]
+    ui = true
+    diff = auto
+    status = auto
+    branch = auto
+
+[color "branch"]
+    current = yellow reverse
+    remote = green
+    local = yellow
+
+[color "diff"]
+    meta = yellow bold
+    frag = magenta bold
+    old = red bold
+    new = green bold
+
+[diff]
+    guitool = vimdiff
+    clitool = vimdiff
+    tool = vimdiff
+    color = auto
+
+[color "status"]
+    added = yellow
+    changed = green
+    untracked = cyan
+
+[pager]
+    color = true
+
+[status]
+    color = auto
+
+[format]
+    pretty = oneline
+
+[giggle]
+    main-window-maximized = false
+
+[credential]
+    helper = cache --timeout 3600
+
+[push]
+    default = simple

@@ -1,0 +1,15 @@
+set defsearch=google
+set hintkeys=asdfghjkl;
+set showtabline=always
+
+map -builtin <space> <C-d>
+
+" disable F1
+imap -builtin <F1> <ESC>
+nmap -builtin <F1> <ESC>
+vmap -builtin <F1> <ESC>
+
+colorscheme pemees
+
+hi BufTab color: #ee9a00; background: #080808; font-weight: normal;
+hi BufTabSelected color: #ee9a00; background: #080808; font-weight: bold;

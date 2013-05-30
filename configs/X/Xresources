@@ -5,7 +5,7 @@ xvt*termName:	rxvt
 Xcursor.theme: Vanilla-DMZ
 
 !-[Font Rendering]-----
-Xft.dpi:        96
+Xft.dpi:        $template.x.xft_dpi$
 Xft.antialias:  true
 Xft.hinting:    true
 Xft.autohint:   false

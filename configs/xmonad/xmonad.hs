@@ -186,6 +186,7 @@ myFloatHook = composeAll
     , className =? "Apvlv"                 --> moveToDocum
     , className =? "Thunar"                --> moveToFiles
     , className =? "Vlc"                   --> moveToMedia
+    , appName   =? "zathura"               --> moveToDocum
     , appName   =? "dwb"                   --> moveToWeb
     , appName   =? "XMathematica"          --> moveToMath
     , appName   =? "Downloads"             --> moveToFiles

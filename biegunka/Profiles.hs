@@ -92,6 +92,11 @@ profile_mpd = profile "mpd" $
     copy "configs/mpd/mpdconf" ".mpdconf"
     copy "configs/mpd/ncmpcpp/config" ".ncmpcpp/config"
 
+profile_mutt :: Script Profiles ()
+profile_mutt = profile "mutt" $
+  dotfiles $
+    copy "configs/mutt" ".mutt"
+
 profile_pentadactyl :: Script Profiles ()
 profile_pentadactyl = profile "pentadactyl" $
   dotfiles $ do
@@ -109,6 +114,11 @@ profile_apvlv = profile "apvlv" $
   dotfiles $
     copy "configs/apvlv/apvlvrc" ".apvlvrc"
 
+profile_rtorrent :: Script Profiles ()
+profile_rtorrent = profile "rtorrent" $
+  dotfiles $
+    copy "configs/rtorrent/rtorrentrc" ".rtorrentrc"
+
 profile_shell :: Script Profiles ()
 profile_shell = do
   profile "shell/bash" $
@@ -122,11 +132,10 @@ profile_shell = do
     dotfiles $
       copy "configs/shell/zsh/zshrc" ".zshrc"
 
-profile_java :: Script Profiles ()
-profile_java = do
-  profile "idea" $
-    dotfiles $
-      copy "configs/idea/config/colors/bleedie.xml" ".IdeaIC12/config/colors/bleedie.xml"
+profile_icons :: Script Profiles ()
+profile_icons = profile "icons" $
+  dotfiles $
+    copy "configs/icons" ".icons"
 
 profile_gtk :: Script Profiles ()
 profile_gtk = profile "gtk" $
@@ -159,3 +168,8 @@ profile_misc :: Script Profiles ()
 profile_misc = do
   profile "misc/hpasteit" $
     git_ "git@github.com:parcs/hpasteit.git" "projects/misc/hpasteit"
+
+profile_urxvt :: Script Profiles ()
+profile_urxvt = profile "urxvt" $
+  dotfiles $
+    copy "configs/urxvt" ".urxvt"

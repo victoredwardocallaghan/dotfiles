@@ -38,8 +38,12 @@ profiles = sequence_
   , profile_gtk
   , profile_misc
   , profile_mpd
+  , profile_mutt
   , profile_pentadactyl
+  , profile_urxvt
+  , profile_rtorrent
   , profile_shell
+  , profile_icons
   , profile_tmux
   , profile_vifm
   , profile_vim

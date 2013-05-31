@@ -16,20 +16,18 @@ settings = def
   , pentadactyl = def
     { font_size = 8
     }
-  , xresource_shiva = def
-    { shiva_bold_font = "-*-terminus-medium-r-*-*-12-*-*-*-*-*-iso10646-1"
-    , shiva_font = "-*-terminus-medium-r-*-*-12-*-*-*-*-*-iso10646-1"
-    }
-  , xresource_scratchpad = def
-    { scratchpad_bold_font = "-*-terminus-medium-r-*-*-14-*-*-*-*-*-iso10646-1"
-    , scratchpad_font = "-*-terminus-medium-r-*-*-14-*-*-*-*-*-iso10646-1"
-    }
   , xmonad = def
-    { terminus_font = "-*-terminus-medium-*-*-*-12-*-*-*-*-*-iso10646-*"
+    { font = "xft:Anonymous Pro for Powerline"
     }
   , x = def
     { user = "m"
-    , xft_dpi = 120
+    , xft_dpi = 96
+    , font_size = 12
+    , xft_font = "xft:Anonymous Pro for Powerline:regular:antialias=true"
+    , xft_bold_font = "xft:Anonymous Pro for Powerline:bold"
+    , xft_italic_font = "xft:Anonymous Pro for Powerline:italic"
+    , xft_boldItalic_font = "xft:Anonymous Pro for Powerline:bold:italic"
+    , xft_im_font = "xft:Anonymous Pro for Powerline:regular"
     }
   }
 
@@ -47,5 +45,6 @@ profiles = sequence_
   , profile_vim
   , profile_x
   , profile_xmonad
+  , profile_zathura
   ]
 

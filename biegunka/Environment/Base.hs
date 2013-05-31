@@ -35,23 +35,19 @@ data Pentadactyl = Pentadactyl
   { font_size :: Int
   } deriving (Data, Typeable)
 
-data XresourceScratchpad = XresourceScratchpad
-  { scratchpad_bold_font :: String
-  , scratchpad_font :: String
-  } deriving (Data, Typeable)
-
-data XresourceShiva = XresourceShiva
-  { shiva_bold_font :: String
-  , shiva_font :: String
-  } deriving (Data, Typeable)
-
 data Xmonad = Xmonad
-  { terminus_font :: String
+  { font :: String
   } deriving (Data, Typeable)
 
 data X = X
   { user :: String
   , xft_dpi :: Int
+  , font_size :: Int
+  , xft_font :: String
+  , xft_bold_font :: String
+  , xft_italic_font :: String
+  , xft_boldItalic_font :: String
+  , xft_im_font :: String
   } deriving (Data, Typeable)
 
 instance Default Git where
@@ -64,18 +60,6 @@ instance Default Git where
 instance Default Pentadactyl where
   def = Pentadactyl
     { font_size = def
-    }
-
-instance Default XresourceShiva where
-  def = XresourceShiva
-    { shiva_bold_font = def
-    , shiva_font = def
-    }
-
-instance Default XresourceScratchpad where
-  def = XresourceScratchpad
-    { scratchpad_bold_font = def
-    , scratchpad_font = def
     }
 
 instance Default Xmonad where

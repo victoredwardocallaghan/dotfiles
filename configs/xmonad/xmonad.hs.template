@@ -132,7 +132,7 @@ myEditor = "/usr/bin/gvim "
 myScreenLock = "/usr/bin/xscreensaver-command -lock"
 
 myFocusedBoarderColor = "orange"
-myFont = "xft:Anonymous Pro for Powerline"
+myFont = "$template.xmonad.font$"
 myHome = "/home/edward"
 
 

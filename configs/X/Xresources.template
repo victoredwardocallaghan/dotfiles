@@ -21,7 +21,7 @@ URxvt*tint:   #000000
 !URxvt*foreground:	grey
 !!urxvt*foreground:	#7f8f9f
 !!urxvt*background:	#0c0d0e
-URxvt.background: [95]#242424
+URxvt.background: $template.urxvt.background_$
 URxvt*saveLines:  1000
 !URxvt.font:	xft:DejaVu Sans Mono:antialias=true:pixelsize=13
 !URxvt.font: xft:Inconsolata:antialias=true:hinting=true
@@ -55,12 +55,13 @@ URxvt*buffered:      false
 URxvt.perl-ext:      default,matcher
 ! tabbedex is not provided by default
 ! put it in ~/.urxvt/
-URxvt.perl-lib: .urxvt/ext/
+URxvt.perl-lib: $template.urxvt.tabbedex$
 !,digital-clock
 !,selection-pastebin
-URxvt.urlLauncher: /usr/bin/dwb
+URxvt.urlLauncher: $template.urxvt.browser$
 URxvt.keysym.C-Delete:  perl:matcher
 URxvt.matcher.button:   1
+URxvt.matcher.pattern.0: http[s]*:\\/\\/[^ "]+"?
 URxvt.matcher.pattern.1:  \\bwww\\.[\\w-]+\\.[\\w./?&@#-]*[\\w/-]
 URxvt.matcher.pattern.2:  \\B(/\\S+?):(\\d+)(?=:|$)
 URxvt.matcher.launcher.2: rvim +$2 $1
@@ -69,7 +70,7 @@ URxvt.matcher.launcher.2: rvim +$2 $1
 !URxvt.selection-pastebin.cmd: rsync -apP % ruth:/var/www/www.ta-sa.org/files/txt/.
 !URxvt.keysym.C-M-e: perl:selection-pastebin:remote-pastebin
 
-URxvt.perl-ext-common: default,selection-autotransform,tabbed,keyboard-select,url-select,clipboard,font-size
+URxvt.perl-ext-common: default,selection-autotransform,tabbedex,keyboard-select,url-select,clipboard,font-size
 
 URxvt.selection-autotransform.0: s/^([^:[:space:]]+):(\\d+):?$/vim +$2 \\Q$1\\E\\x0d/
 
@@ -90,6 +91,9 @@ URxvt.tabbed.tabbar-fg: 10
 URxvt.tabbed.tabbar-bg: #000000
 URxvt.tabbed.tab-fg:    4
 URxvt.tabbed.tab-bg:    #000000
+URxvt.tabbed.new-button: no
+URxvt.tabbed.autohide: yes
+URxvt.tabbed.title: no
 
 
 !!-[URxvt-perls = keyboard-select]---
@@ -119,6 +123,22 @@ URxvt*cursorColor:   #A7BF76
 URxvt*.colorIT:      #87af5f
 URxvt*.colorBD:      #d7d7d7
 URxvt*.colorUL:      #87afd7
+
+!!-[vimus MPD player settings]---
+vimus.background: #212121
+
+vimus.saveLines: 12000
+vimus.color0: #212121
+vimus.color1: #AA0000
+vimus.color2: #00AA00
+vimus.color3: #BB6622
+vimus.color4: #0000AA
+vimus.color5: #AA00AA
+vimus.color6: #00AAAA
+vimus.color7: #AAAAAA
+vimus.color8: #555555
+
+vimus.perl-ext-common: default,matcher
 
 !-[XScreensaver Settings]-----
 xscreensaver.Dialog.Button.foreground:	#0c0d0e

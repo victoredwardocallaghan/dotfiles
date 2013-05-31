@@ -2,7 +2,7 @@ module Environment.T530 where
 
 import Data.Default (def)
 
-import Environment.Base
+import Environment.Template
 import Profiles
 
 
@@ -18,6 +18,11 @@ settings = def
     }
   , xmonad = def
     { font = "xft:Anonymous Pro for Powerline"
+    }
+  , urxvt = def
+    { tabbedex = ".urxvt/ext"
+    , background_ =  "[95]#242424"
+    , browser = "/usr/bin/dwb"
     }
   , x = def
     { user = "edward"

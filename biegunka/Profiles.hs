@@ -54,7 +54,7 @@ profile_git :: Script Profiles ()
 profile_git = profile "git" $ do
   dotfiles $ do
     substitute "configs/git/gitconfig.template" ".gitconfig"
-    copy "configs/git/ignore" ".gitignore"
+    copy "configs/git/gitignore" ".gitignore"
   git_ "git@github.com:nvie/gitflow.git" "projects/misc/gitflow"
     -- install?
   git_ "git@github.com:arc90/git-sweep.git" "projects/misc/git-sweep"
@@ -67,8 +67,8 @@ profile_x = profile "X" $ do
     copy "configs/X/Xresources.colours" ".Xresources.colours"
     copy "configs/X/XCompose" ".XCompose"
     copy "configs/X/inputrc" ".inputrc"
-    copy "configs/X/xprofile" "xprofile"
-    copy "configs/X/xsession" "xsession"
+    copy "configs/X/xprofile" ".xprofile"
+    copy "configs/X/xsession" ".xsession"
     copy "configs/X/xinitrc" ".xinitrc"
     copy "configs/X/xbindkeysrc" ".xbindkeysrc"
     copy "configs/X/Xmodmap" ".Xmodmap"

@@ -1,5 +1,5 @@
 {-# LANGUAGE DeriveDataTypeable #-}
-module Environment.Base where
+module Environment.Template where
 
 import Data.Data (Data)
 import Data.Typeable (Typeable)
@@ -10,6 +10,7 @@ data Template = Template
   { git :: Git
   , pentadactyl :: Pentadactyl
   , xmonad :: Xmonad
+  , urxvt :: Urxvt
   , x :: X
   } deriving (Data, Typeable)
 
@@ -33,6 +34,10 @@ data Pentadactyl = Pentadactyl
 
 data Xmonad = Xmonad
   { font :: String
+  } deriving (Data, Typeable)
+
+data Urxvt = Urxvt
+  { tabbedex, background_, browser :: String
   } deriving (Data, Typeable)
 
 data X = X
@@ -61,6 +66,13 @@ instance Default Pentadactyl where
 instance Default Xmonad where
   def = Xmonad
     { font = def
+    }
+
+instance Default Urxvt where
+  def = Urxvt
+    { tabbedex = def
+    , background_ = def
+    , browser = def
     }
 
 instance Default X where

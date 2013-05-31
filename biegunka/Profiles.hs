@@ -94,7 +94,13 @@ profile_mpd = profile "mpd" $
 profile_mutt :: Script Profiles ()
 profile_mutt = profile "mutt" $
   dotfiles $
-    copy "configs/mutt" ".mutt"
+    copy "configs/mutt/certificates" ".mutt/certificates"
+    copy "configs/mutt/colors.zenburn" ".mutt/colors.zenburn"
+    copy "configs/mutt/macros" ".mutt/macros"
+    copy "configs/mutt/muttrc" ".mutt/muttrc"
+    copy "configs/mutt/mailcap" ".mutt/mailcap"
+    copy "configs/mutt/muttrc" ".mutt/muttrc"
+    copy "configs/mutt/signature" ".mutt/signature"
 
 profile_pentadactyl :: Script Profiles ()
 profile_pentadactyl = profile "pentadactyl" $
@@ -134,7 +140,7 @@ profile_shell = do
 profile_icons :: Script Profiles ()
 profile_icons = profile "icons" $
   dotfiles $
-    copy "configs/icons" ".icons"
+    link "configs/icons/Iris" ".icons/Iris"
 
 profile_gtk :: Script Profiles ()
 profile_gtk = profile "gtk" $
@@ -171,4 +177,5 @@ profile_misc = do
 profile_urxvt :: Script Profiles ()
 profile_urxvt = profile "urxvt" $
   dotfiles $
-    copy "configs/urxvt" ".urxvt"
+    copy "configs/urxvt/ext/tabbedex" ".urxvt/ext/tabbedex"
+    copy "configs/urxvt/ext/font-size" ".urxvt/ext/font-size"

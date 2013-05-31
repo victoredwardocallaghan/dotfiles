@@ -93,7 +93,7 @@ profile_mpd = profile "mpd" $
 
 profile_mutt :: Script Profiles ()
 profile_mutt = profile "mutt" $
-  dotfiles $
+  dotfiles $ do
     copy "configs/mutt/certificates" ".mutt/certificates"
     copy "configs/mutt/colors.zenburn" ".mutt/colors.zenburn"
     copy "configs/mutt/macros" ".mutt/macros"

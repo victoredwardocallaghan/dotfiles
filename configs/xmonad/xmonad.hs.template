@@ -572,8 +572,12 @@ myKeys conf@(XConfig {XMonad.modMask = modMask}) = M.fromList $
      nextScreen)
 
   -- Move focus to the next window.
-  , ((modMask, xK_Tab),
+  , ((modMask .|. shiftMask, xK_Tab),
      windows W.focusDown)
+
+  -- Switch to last workspace
+  , ((modMask, xK_Tab),
+     toggleWS' ["NSP"])
 
   -- Move focus to the next window.
   , ((modMask, xK_j),

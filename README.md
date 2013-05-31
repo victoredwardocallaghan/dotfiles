@@ -2,6 +2,8 @@ dotfiles
 
 ========
 
+[![Build Status](https://drone.io/github.com/victoredwardocallaghan/dotfiles/status.png)](https://drone.io/github.com/victoredwardocallaghan/dotfiles/latest)
+
 My config files.
 
 Requirements;

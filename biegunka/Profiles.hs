@@ -112,7 +112,7 @@ profile_apvlv = profile "apvlv" $
 profile_shell :: Script Profiles ()
 profile_shell = do
   profile "shell/bash" $
-    dotfiles $
+    dotfiles $ do
       copy "configs/shell/bash/bashrc" ".bashrc"
       copy "configs/shell/bash/bash_profile" ".bash_profile"
       copy "configs/shell/bash/bash_logout" ".bash_logout"
@@ -130,7 +130,7 @@ profile_java = do
 
 profile_gtk :: Script Profiles ()
 profile_gtk = profile "gtk" $
-  dotfiles $
+  dotfiles $ do
     copy "configs/gtk/gtkrc-2.0" ".gtkrc-2.0"
     copy "configs/gtk/gtkrc.mine" ".gtkrc.mine"
 

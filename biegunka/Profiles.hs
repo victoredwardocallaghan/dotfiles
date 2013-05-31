@@ -42,12 +42,13 @@ profile_vim = do
 profile_xmonad :: Script Profiles ()
 profile_xmonad = do
   profile "xmonad/xmonad.hs" $
-    dotfiles $
+    dotfiles $ do
+      copy "configs/xmonad/bitmaps" ".xmonad/bitmaps"
       substitute "configs/xmonad/xmonad.hs.template" ".xmonad/xmonad.hs"
   profile "xmonad/xmobar" $ do
     dotfiles $ do
-      substitute "configs/xmonad/xmobar.hs.template" ".xmonad/xmobar.hs"
-      copy "configs/xmonad/xmobarrc" ".xmobarrc"
+      substitute "configs/xmonad/xmobar.hs.template" ".xmobar/xmobar.hs"
+      substitute "configs/xmonad/xmobarrc.template" ".xmobarrc"
 
 profile_git :: Script Profiles ()
 profile_git = profile "git" $ do

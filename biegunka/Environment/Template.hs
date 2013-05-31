@@ -42,6 +42,7 @@ data Xmonad = Xmonad
 data Xmobar = Xmobar
   { background, position :: String
   , battery :: Maybe String
+  , icons :: Maybe String
   } deriving (Data, Typeable)
 
 data Urxvt = Urxvt
@@ -81,6 +82,7 @@ instance Default Xmobar where
     { background = def
     , position = def
     , battery = Just "\"\""
+    , icons = def
     }
 
 instance Default Urxvt where

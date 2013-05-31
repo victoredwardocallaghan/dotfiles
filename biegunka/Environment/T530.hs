@@ -21,8 +21,9 @@ settings = def
     }
   , xmobar = def
     { background = "\"#333333\""
-    , position = "Static { xpos = 102, ypos = 750, width = 1264, height = 20 }"
+    , position = Top
     , battery = Just "\"%battery%\""
+    , icons = Just "/home/edward/.xmonad/bitmaps/xbm8x8"
     }
   , urxvt = def
     { tabbedex = ".urxvt/ext"

@@ -1,0 +1,32 @@
+Config { font = "xft:Anonymous Pro for Powerline:antialias=true:bold:size=08"
+       , bgColor = "black"
+       , fgColor = "grey"
+       , position = Top
+       , persistent = True
+       , hideOnStart = False
+       , overrideRedirect = False
+       , lowerOnStart = True
+       , commands = [ Run Network "eth0" ["-L","0","-H","32","--normal","green","--high","red"] 10
+--					  , Run Weather "CYQY" ["-t","<station>: <tempC>°C","-L","18","-H","25","--normal","green","--high","red","--low","lightblue"] 36000
+                    , Run Wireless "wlan0" ["-L","40","-H","75","--normal","orange","--high","green","--low","red"] 10
+--                    , DynNetwork [] 10
+                    , Run Battery ["-L","50","-H","75","--high","green","--normal","yellow","--low","red","--template","bat: <left>%"] 100
+                    , Run BatteryP ["BAT0"] ["-t","<acstatus><left>%","-L","15","-H","80","-p","3","--","-O","<fc=green>A/C</fc> - ","-o","","-l","red","-m","blue","-h","green"] 600
+--                    , Run MPD ["-t","<composer> <title> (<album>) <track>/<lapsed> <statei>", "--", "-P", "<fc=green><icon=/home/edward/.xmonad/bitmaps/xbm8x8/play.xbm/></fc>", "-Z", "<fc=#ee9a00><icon=/home/edward/.xmonad/bitmaps/xbm8x8/stop.xbm/></fc>", "-S", "><"] 10
+--                    , Run Volume "default" "Master" ["-H","75","-h","red"] 10
+--					  , Run AlsaVolume "Master" ["--template", "vol:<vol>"] 10
+                    , Run MultiCpu ["-t","Cpu: <total>%","-L","3","-H","50","--normal","green","--high","red"] 10
+                    , Run Memory ["-t","Mem: <usedratio>%"] 10
+                    , Run Swap [] 10
+--                    , DiskU [("sdb1", "<used>/<size>")] ["-L", "20", "-H", "50", "-m", "1", "-p", "3"] 20
+--                    , DiskIO [("/", "<read> <write>"), ("sdb1", "<total>")] [] 10
+                    , Run Locks
+--                    , Run Mail [("inbox", "~/mail/inbox"),("lists", "~/mail/lists")] "mail"
+                    , Run Date "%a %b %_d %Y %H:%M:%S" "date" 10
+                    , Run StdinReader
+                    ]
+       , sepChar = "%"
+       , alignSep = "}{"
+       , template = "%StdinReader% }{<icon=/home/edward/.xmonad/bitmaps/xbm8x8/cpu.xbm/> %multicpu% | <icon=/home/edward/.xmonad/bitmaps/xbm8x8/mem.xbm/> %memory% <icon=/home/edward/.xmonad/bitmaps/xbm8x8/diskette.xbm/> %swap% <fc=#ee9a00><icon=/home/edward/.xmonad/bitmaps/xbm8x8/cat.xbm/> %locks%</fc> | <icon=/home/edward/.xmonad/bitmaps/xbm8x8/net_wired.xbm/> %eth0% - <action=urxvt -e sudo wifi-menu> <icon=/home/edward/.xmonad/bitmaps/xbm8x8/wifi_01.xbm/> <fc=yellow>%wlan0wi%</fc></action> | <icon=/home/edward/.xmonad/bitmaps/xbm8x8/bat_full_02.xbm/> %battery% | <fc=#ee9a00>%date%</fc>"
+--       , template = "%StdinReader% }{%cpu% | %memory% * %swap% * %locks% | %dynnetwork% %eth0% - %wlan0wi% | %battery% | <fc=#ee9a00>%date%</fc> " -- | %CYQY% "
+       }

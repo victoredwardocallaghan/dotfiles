@@ -184,6 +184,7 @@ myFloatHook = composeAll
     , className =? "Steam"                 --> moveToMisc
     , className =? "Gvim"                  --> moveToCode
     , className =? "Apvlv"                 --> moveToDocum
+    , className =? "Xchm"                  --> moveToDocum
     , className =? "Thunar"                --> moveToFiles
     , className =? "Vlc"                   --> moveToMedia
     , appName   =? "zathura"               --> moveToDocum

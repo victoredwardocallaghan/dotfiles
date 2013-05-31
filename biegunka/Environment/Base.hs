@@ -42,7 +42,7 @@ data Xmonad = Xmonad
 data X = X
   { user :: String
   , xft_dpi :: Int
-  , font_size :: Int
+  , xft_font_size :: Int
   , xft_font :: String
   , xft_bold_font :: String
   , xft_italic_font :: String
@@ -64,11 +64,17 @@ instance Default Pentadactyl where
 
 instance Default Xmonad where
   def = Xmonad
-    { terminus_font = def
+    { font = def
     }
 
 instance Default X where
   def = X
     { user = def
     , xft_dpi = def
+    , xft_font_size = def
+    , xft_font = def
+    , xft_bold_font = def
+    , xft_italic_font = def
+    , xft_boldItalic_font = def
+    , xft_im_font = def
     }

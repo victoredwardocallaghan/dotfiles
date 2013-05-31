@@ -33,11 +33,11 @@ URxvt*saveLines:  1000
 !URxvt*boldItalicFont  : xft:Inconsolata for Powerline:bold:italic:size=12
 !! .
 !! Anonymous Pro
-URxvt*font            : $template.x.xft_font$:$template.x.font_size$
-URxvt*boldFont        : $template.x.xft_bold_font$:$template.x.font_size$
-URxvt*italicFont      : $template.x.xft_italic_font$:$template.x.font_size$
-URxvt*boldItalicFont  : $template.x.xft_boldItalic_font$:$template.x.font_size$
-URxvt*imFont          : $template.x.xft_im_font$:$template.x.font_size$
+URxvt*font            : $template.x.xft_font$:$template.x.xft_font_size$
+URxvt*boldFont        : $template.x.xft_bold_font$:$template.x.xft_font_size$
+URxvt*italicFont      : $template.x.xft_italic_font$:$template.x.xft_font_size$
+URxvt*boldItalicFont  : $template.x.xft_boldItalic_font$:$template.x.xft_font_size$
+URxvt*imFont          : $template.x.xft_im_font$:$template.x.xft_font_size$
 
 !! .
 URxvt*cursorBlink:  true

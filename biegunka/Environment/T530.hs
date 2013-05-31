@@ -22,7 +22,7 @@ settings = def
   , x = def
     { user = "m"
     , xft_dpi = 96
-    , font_size = 12
+    , xft_font_size = 12
     , xft_font = "xft:Anonymous Pro for Powerline:regular:antialias=true"
     , xft_bold_font = "xft:Anonymous Pro for Powerline:bold"
     , xft_italic_font = "xft:Anonymous Pro for Powerline:italic"

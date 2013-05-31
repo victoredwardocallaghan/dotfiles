@@ -17,8 +17,6 @@ instance Default Template where
   def = Template
     { git = def
     , pentadactyl = def
-    , xresource_scratchpad = def
-    , xresource_shiva = def
     , xmonad = def
     , x = def
     }

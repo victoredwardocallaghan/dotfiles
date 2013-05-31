@@ -176,6 +176,6 @@ profile_misc = do
 
 profile_urxvt :: Script Profiles ()
 profile_urxvt = profile "urxvt" $
-  dotfiles $
+  dotfiles $ do
     copy "configs/urxvt/ext/tabbedex" ".urxvt/ext/tabbedex"
     copy "configs/urxvt/ext/font-size" ".urxvt/ext/font-size"

@@ -618,6 +618,7 @@ v4l-utils
 valgrind
 vde2
 videoproto
+vifm
 gvim
 vim-runtime
 vlc

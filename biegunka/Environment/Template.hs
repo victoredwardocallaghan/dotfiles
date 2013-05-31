@@ -10,6 +10,7 @@ data Template = Template
   { git :: Git
   , pentadactyl :: Pentadactyl
   , xmonad :: Xmonad
+  , xmobar :: Xmobar
   , urxvt :: Urxvt
   , x :: X
   } deriving (Data, Typeable)
@@ -19,6 +20,8 @@ instance Default Template where
     { git = def
     , pentadactyl = def
     , xmonad = def
+    , xmobar = def
+    , urxvt = def
     , x = def
     }
 
@@ -34,6 +37,11 @@ data Pentadactyl = Pentadactyl
 
 data Xmonad = Xmonad
   { font :: String
+  } deriving (Data, Typeable)
+
+data Xmobar = Xmobar
+  { background, position :: String
+  , battery :: Maybe String
   } deriving (Data, Typeable)
 
 data Urxvt = Urxvt
@@ -66,6 +74,13 @@ instance Default Pentadactyl where
 instance Default Xmonad where
   def = Xmonad
     { font = def
+    }
+
+instance Default Xmobar where
+  def = Xmobar
+    { background = def
+    , position = def
+    , battery = Just "\"\""
     }
 
 instance Default Urxvt where

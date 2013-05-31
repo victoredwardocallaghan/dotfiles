@@ -19,6 +19,11 @@ settings = def
   , xmonad = def
     { font = "xft:Anonymous Pro for Powerline"
     }
+    xmobar = def
+    { background = "\"#333333\""
+    , position = "Static { xpos = 102, ypos = 750, width = 1264, height = 20 }"
+    , battery = Just "\"%battery%\""
+    }
   , urxvt = def
     { tabbedex = ".urxvt/ext"
     , background_ =  "[95]#242424"

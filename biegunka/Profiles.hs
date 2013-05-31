@@ -46,8 +46,7 @@ profile_xmonad = do
       substitute "configs/xmonad/xmonad.hs.template" ".xmonad/xmonad.hs"
   profile "xmonad/xmobar" $ do
     dotfiles $ do
-      copy "configs/xmonad/xmobar-top.hs" ".xmonad/xmobar-top.hs"
-      copy "configs/xmonad/xmobar.hs" ".xmonad/xmobar.hs"
+      substitute "configs/xmonad/xmobar.hs.template" ".xmonad/xmobar.hs"
       copy "configs/xmonad/xmobarrc" ".xmobarrc"
 
 profile_git :: Script Profiles ()

@@ -21,7 +21,7 @@ settings = def
     }
   , xmobar = def
     { background = "\"#333333\""
-    , position = Top
+    , position = "TOP"
     , battery = Just "\"%battery%\""
     , icons = Just "/home/edward/.xmonad/bitmaps/xbm8x8"
     }

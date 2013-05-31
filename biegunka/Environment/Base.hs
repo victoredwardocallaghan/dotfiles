@@ -9,8 +9,6 @@ import Data.Default
 data Template = Template
   { git :: Git
   , pentadactyl :: Pentadactyl
-  , xresource_scratchpad :: XresourceScratchpad
-  , xresource_shiva :: XresourceShiva
   , xmonad :: Xmonad
   , x :: X
   } deriving (Data, Typeable)

@@ -636,6 +636,7 @@ wvdial
 wvstreams
 wxgtk
 x264
+xchm
 xbindkeys
 xcalib
 xcb-proto

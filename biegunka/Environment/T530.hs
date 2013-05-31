@@ -20,7 +20,7 @@ settings = def
     { font = "xft:Anonymous Pro for Powerline"
     }
   , x = def
-    { user = "m"
+    { user = "edward"
     , xft_dpi = 96
     , xft_font_size = 12
     , xft_font = "xft:Anonymous Pro for Powerline:regular:antialias=true"

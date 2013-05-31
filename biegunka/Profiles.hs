@@ -7,7 +7,7 @@ import           Biegunka
 import           Biegunka.Source.Git
 
 dotfiles :: Script Actions () -> Script Sources ()
-dotfiles as = git' "git@github.com:victoredwardocallaghan/dotfiles" ".dotfiles" $ def & actions .~ as
+dotfiles as = git' "git@github.com:victoredwardocallaghan/dotfiles" "projects/edward/dotfiles" $ def & actions .~ as
 
 profile_vim :: Script Profiles ()
 profile_vim = do

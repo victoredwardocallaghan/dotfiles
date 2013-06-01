@@ -123,7 +123,7 @@ profile_apvlv = profile "apvlv" $
 profile_rtorrent :: Script Profiles ()
 profile_rtorrent = profile "rtorrent" $
   dotfiles $
-    copy "configs/rtorrent/rtorrentrc" ".rtorrentrc"
+    copy "configs/rtorrent/rtorrent.rc" ".rtorrent.rc"
 
 profile_shell :: Script Profiles ()
 profile_shell = do
@@ -157,7 +157,7 @@ profile_mocp = profile "mocp" $
 profile_tmux :: Script Profiles ()
 profile_tmux = profile "tmux" $
   dotfiles $
-    copy "configs/tmux/conf" ".tmux.conf"
+    copy "configs/tmux/tmux.conf" ".tmux.conf"
 
 profile_vifm :: Script Profiles ()
 profile_vifm = profile "vifm" $

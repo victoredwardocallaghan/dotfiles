@@ -3,8 +3,8 @@ $if(template.git.set_user)$
 [user]
     name = $template.git.user_name$
     email = $template.git.user_email$
-$endif$
 ;   signingkey = 
+$endif$
 
 [github]
     user = victoredwardocallaghan

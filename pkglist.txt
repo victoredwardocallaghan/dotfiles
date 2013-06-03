@@ -635,6 +635,8 @@ wpa_supplicant
 wvdial
 wvstreams
 wxgtk
+dosbox
+odt2txt
 x264
 xchm
 xbindkeys

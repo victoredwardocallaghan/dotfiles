@@ -69,6 +69,9 @@ $endif$
     tool = vimdiff
     color = auto
 
+[diff "odt"]
+   textconv=odt2txt
+
 [color "status"]
     added = yellow
     changed = green

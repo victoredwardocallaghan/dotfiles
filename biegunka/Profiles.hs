@@ -55,6 +55,7 @@ profile_git = profile "git" $ do
   dotfiles $ do
     substitute "configs/git/gitconfig.template" ".gitconfig"
     copy "configs/git/gitignore" ".gitignore"
+    copy "configs/git/gitattributes" ".gitattributes"
   git_ "git@github.com:nvie/gitflow.git" "projects/misc/gitflow"
     -- install?
   git_ "git@github.com:arc90/git-sweep.git" "projects/misc/git-sweep"

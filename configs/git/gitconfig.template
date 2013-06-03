@@ -72,6 +72,9 @@ $endif$
 [diff "odt"]
    textconv=odt2txt
 
+[diff "docx"]
+   textconv=docx2txt
+
 [color "status"]
     added = yellow
     changed = green

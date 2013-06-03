@@ -637,6 +637,7 @@ wvstreams
 wxgtk
 dosbox
 odt2txt
+docx2txt
 x264
 xchm
 xbindkeys
